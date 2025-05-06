@@ -1,0 +1,20 @@
+{
+  "added": [
+    "{\n",
+    "        \"ValkyrieEditorSettings\": {\n",
+    "                \"AllowedMenus\": {\n",
+    "                },\n",
+    "                \"AllowedClasses\": {\n",
+    "                                \"/Script/CreativeCommunicationUI.CreativeBubbleChatViewModel\":        { \"Visible\": false }\n",
+    "                },                        \n",
+    "                \"PropertyEditorClassPermissionList\": {\n",
+    "                                \"/Script/CreativeCommunicationUI.CreativeBubbleChatViewModel\": \n",
+    "                                {\n",
+    "                                        \"AllowList\": { \"=\": [\"_DISALLOWALL_\"] }\n",
+    "                                }\n",
+    "                }\n",
+    "        }\n",
+    "}"
+  ],
+  "removed": []
+}

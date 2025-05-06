@@ -1,0 +1,10 @@
+[
+  "[ConsoleVariables]\n",
+  "Sprout.InventoryOverflow.EnableOneTimeMessage=true\n",
+  "Sprout.InventoryOverflow.SproutOneTimeMessageVersion=1\n",
+  "Sprout.InventoryOverflow.SproutOneTimeMessageSender=AISpawnerData.Type.Juno.Minifig.Villager.Peely\n",
+  "Sprout.InventoryOverflow.SproutOneTimeMessageSubject=Update_SomethingWentWrong_Subject\n",
+  "Sprout.InventoryOverflow.SproutOneTimeMessageBody=Update_SomethingWentWrong_Body\n",
+  "Sprout.InventoryOverflow.SproutOneTimeMessageAttachment=WorldItem:rid_currency_cash\n",
+  "Sprout.InventoryOverflow.SproutOneTimeMessageAttachementCount=30000"
+]

@@ -1,0 +1,10 @@
+{
+  "added": [
+    "[Core.Log]\n",
+    "LogGameplayStreamingHandler=Verbose\n",
+    "[ConsoleVariables]\n",
+    "Fort.Rollback.UseEnhancedInputForValetCars=1\n",
+    "Fort.Rollback.UseEnhancedInputForMotorcycles=1"
+  ],
+  "removed": []
+}

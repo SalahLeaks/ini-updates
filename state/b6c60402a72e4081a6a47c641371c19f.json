@@ -1,0 +1,7 @@
+[
+  "[ConsoleVariables]\n",
+  "WindowsPlatformCrashContext.ScreenshotOnGPUCrash=1\n",
+  "r.Lumen.HardwareRayTracing=0\n",
+  "r.SkinCache.Mode=0\n",
+  "Fort.OfferRHIChangeForStabilityDuringLogin=0"
+]
