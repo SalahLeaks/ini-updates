@@ -9,7 +9,6 @@
   "bCheckForActivityTournamentLocks=false\n",
   "+ExperimentalBucketPercentList=(ExperimentNum=911,Name=\"MoveDMToPriorityProfileOptions\",BucketPercents=(0,100),WinningBucketIndex=-1)\n",
   "ExperimentalCohortPercent=(CohortPercent=100,ExperimentNum=900)\n",
-  "+ExperimentalCohortPercent=(CohortPercent=99,ExperimentNum=623)\n",
   "+HiddenSettings=\"LobbyMusicVolume\"\n",
   "+CreativeBetaPermissions=(PrimaryAssetId=\"PlaylistUserOption:Device_ExperienceSettings_V2_C_BubbleChat\",PermissionTagContainer=(\"Developer\"),EntitlementTagContainer=(\"VKCreateUGCEpicDeveloper\"))\n",
   "+CreativeBetaPermissions=(PrimaryAssetId=\"PlaylistUserOption:Device_ExperienceSettings_V2_C_BubbleChatMaximumRange\",PermissionTagContainer=(\"Developer\"),EntitlementTagContainer=(\"VKCreateUGCEpicDeveloper\"))\n",

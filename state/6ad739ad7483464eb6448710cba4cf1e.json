@@ -1,0 +1,4 @@
+[
+  "[ConsoleVariables_HighPriority]\n",
+  "gc.LowMemory.IncrementalGCTimePerFrame=0.008"
+]

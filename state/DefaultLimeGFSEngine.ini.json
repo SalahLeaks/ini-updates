@@ -1,0 +1,7 @@
+{
+  "added": [
+    "[ConsoleVariables]\n",
+    "Fort.Rollback.UseCosmeticFlowOnlyWhereRequired=1\n"
+  ],
+  "removed": []
+}

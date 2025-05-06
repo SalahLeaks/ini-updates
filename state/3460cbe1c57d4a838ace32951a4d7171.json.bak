@@ -42,6 +42,7 @@
   "Sparks.Streaming.VolumeAdjustDb.Preview=15.0\n",
   "Fort.CreativeCommunicationOverride.bEnableAddingCreativeCommunicationWidgetScene=false\n",
   "MM.EnableNewFlow=false\n",
+  "Discovery.TileDetails.SkipExternalVMInitialization=false\n",
   "Verse.CreateCompatConstraintPackages=0\n",
   "[OnlineSubsystemMcp.OnlineDiscoveryServiceMcp]\n",
   "bEnableAccessTokenAuthentication=true\n",

@@ -7,8 +7,15 @@ from discord import File, Embed
 from dotenv import load_dotenv
 from datetime import datetime, timedelta
 import re
+import logging
 
 load_dotenv()
+
+# ——— CLEAN LOGGING SETUP ———
+logging.basicConfig(
+    level=logging.INFO,
+    format='[Logs] %(message)s'
+)
 
 DEVICE_ID     = os.getenv("EPIC_DEVICE_ID")
 DEVICE_SECRET = os.getenv("EPIC_DEVICE_SECRET")
@@ -16,7 +23,7 @@ ACCOUNT_ID    = os.getenv("EPIC_ACCOUNT_ID")
 CLIENT_SECRET = os.getenv("EPIC_CLIENT_SECRET")
 TOKEN_URL     = "https://account-public-service-prod.ol.epicgames.com/account/api/oauth/token"
 
-# All filename entries
+# ——— ALL YOUR FILENAME ENTRIES ———
 FILENAME_ENTRIES = [
     {"uniqueFilename": "e000dd0687b34cffa247532a8d7e4fd0", "filename": "Switch_RuntimeOptions.ini"},
     {"uniqueFilename": "93f93825f97a48739ea8761983eae344", "filename": "DefaultHardware.ini"},
@@ -89,19 +96,18 @@ FILENAME_ENTRIES = [
     {"uniqueFilename": "532dc6866ade40c7b2f69fb2c9b5b3a0", "filename": "AndroidJunoGameNativeDeviceProfiles.ini"},
     {"uniqueFilename": "31ef7bccad1c4471a9de0939e0c64e86", "filename": "DefaultDelMarGameEngine.ini"},
     {"uniqueFilename": "b175cde10a9a420f8e151bade9d33918", "filename": "Luna_Game.ini"},
-
-    # ... the rest of your mappings ...
 ]
 
 BASE = "https://fngw-mcp-gc-livefn.ol.epicgames.com/fortnite/api/cloudstorage/system/"
-ENDPOINTS = [BASE + e["uniqueFilename"] for e in FILENAME_ENTRIES]
-FILENAME_MAP = {e["uniqueFilename"]: e["filename"] for e in FILENAME_ENTRIES}
+ENDPOINTS = [BASE + entry["uniqueFilename"] for entry in FILENAME_ENTRIES]
+FILENAME_MAP = {entry["uniqueFilename"]: entry["filename"] for entry in FILENAME_ENTRIES}
 
 DISCORD_TOKEN = os.getenv("DISCORD_BOT_TOKEN")
-CHANNEL_ID    = int(os.getenv("DISCORD_CHANNEL_ID", "YOUR_CHANNEL_ID"))
-POLL_INTERVAL = 60
+CHANNEL_ID    = int(os.getenv("DISCORD_CHANNEL_ID", "1369304362941153330"))
+POLL_INTERVAL = int(os.getenv("POLL_INTERVAL", "60"))
 STATE_DIR     = "state"
 os.makedirs(STATE_DIR, exist_ok=True)
+
 
 class FortniteTrackerBot(discord.Client):
     def __init__(self):
@@ -111,39 +117,39 @@ class FortniteTrackerBot(discord.Client):
         self.token_expires_at = datetime.utcnow()
 
     async def on_ready(self):
-        print("Bot is online and ready.")
+        logging.info("Bot is online and ready.")
         asyncio.create_task(self.poll_loop())
 
     async def device_auth(self):
         data = {
-            "grant_type":"device_auth",
+            "grant_type": "device_auth",
             "device_id": DEVICE_ID,
             "secret": DEVICE_SECRET,
             "account_id": ACCOUNT_ID
         }
         headers = {
-            "Content-Type":"application/x-www-form-urlencoded",
+            "Content-Type": "application/x-www-form-urlencoded",
             "Authorization": f"Basic {CLIENT_SECRET}"
         }
         async with aiohttp.ClientSession() as sess:
             resp = await sess.post(TOKEN_URL, data=data, headers=headers)
             resp.raise_for_status()
             j = await resp.json()
-            print("Obtained new device refresh token.")
+            logging.info("Obtained new device refresh token.")
             return j["refresh_token"]
 
     async def refresh_access_token(self):
         if not self.refresh_token:
             self.refresh_token = await self.device_auth()
         data = {
-            "grant_type":"refresh_token",
+            "grant_type": "refresh_token",
             "refresh_token": self.refresh_token,
-            "token_type":"eg1"
+            "token_type": "eg1"
         }
         headers = {
-            "Content-Type":"application/x-www-form-urlencoded",
+            "Content-Type": "application/x-www-form-urlencoded",
             "Authorization": f"Basic {CLIENT_SECRET}",
-            "X-Epic-Device-ID":"device_auth"
+            "X-Epic-Device-ID": "device_auth"
         }
         async with aiohttp.ClientSession() as sess:
             resp = await sess.post(TOKEN_URL, data=data, headers=headers)
@@ -151,16 +157,19 @@ class FortniteTrackerBot(discord.Client):
             j = await resp.json()
             self.access_token     = j["access_token"]
             self.token_expires_at = datetime.utcnow() + timedelta(minutes=14)
-            print("Refreshed access token.")
+            logging.info("Refreshed access token.")
 
     async def fetch_json(self, url):
         if not self.access_token or datetime.utcnow() >= self.token_expires_at:
             await self.refresh_access_token()
-        headers = {"Authorization": f"Bearer {self.access_token}", "User-Agent":"Mozilla/5.0"}
+        headers = {
+            "Authorization": f"Bearer {self.access_token}",
+            "User-Agent": "Mozilla/5.0"
+        }
         async with aiohttp.ClientSession() as sess:
             resp = await sess.get(url, headers=headers)
             if resp.status == 401:
-                print("Access token expired, refreshing...")
+                logging.info("Access token expired, refreshing…")
                 await self.refresh_access_token()
                 headers["Authorization"] = f"Bearer {self.access_token}"
                 resp = await sess.get(url, headers=headers)
@@ -187,26 +196,52 @@ class FortniteTrackerBot(discord.Client):
         for l in lines:
             if f"{sign}DataTable=" not in l: continue
             body = l.lstrip(f"{sign} ").rstrip()
-            _, rest = body.split("=",1)
-            path, action, row, field, value = rest.split(";",4)
+            _, rest = body.split("=", 1)
+            path, action, row, field, value = rest.split(";", 4)
             out.append((path, row, field, value, sign))
         return out
+
+    async def send_embed_safe(self, channel, embed, file=None):
+        try:
+            await channel.send(embed=embed, file=file)
+            logging.info("Message sent successfully")
+        except discord.HTTPException as he:
+            msg = str(he).lower()
+            if "embeds too large" in msg or "maximum number of embeds" in msg:
+                # split fields into ≤5-field embeds
+                fields = embed.fields
+                chunks = [fields[i:i+5] for i in range(0, len(fields), 5)]
+                for idx, chunk in enumerate(chunks, 1):
+                    part = Embed(title=f"{embed.title} (part {idx}/{len(chunks)})")
+                    for f in chunk:
+                        part.add_field(name=f.name, value=f.value, inline=f.inline)
+                    try:
+                        await channel.send(embed=part)
+                        logging.info(f"Sent split embed part {idx}")
+                    except Exception:
+                        pass
+            # else any other HTTP error → ignore
+        except Exception:
+            # swallow all other errors
+            pass
 
     async def poll_loop(self):
         await self.wait_until_ready()
         channel = self.get_channel(CHANNEL_ID)
-        print(f"Starting poll loop against {len(ENDPOINTS)} endpoints.")
+        logging.info(f"Starting poll loop against {len(ENDPOINTS)} endpoints.")
         while True:
+            logging.info("Fetching Data from Cloudstorage Endpoints")
             for url in ENDPOINTS:
-                key       = url.rsplit("/",1)[-1]
+                key       = url.rsplit("/", 1)[-1]
                 friendly  = FILENAME_MAP.get(key, f"{key}.json")
                 prev_file = os.path.join(STATE_DIR, f"{key}.json")
                 diff_file = os.path.join(STATE_DIR, f"{friendly}.json")
 
+                # FETCH
                 try:
                     text = await self.fetch_json(url)
                 except Exception as e:
-                    print(f"[{friendly}] fetch error: {e}")
+                    logging.info(f"[{friendly}] fetch error: {e} — skipping")
                     continue
 
                 new_lines = text.splitlines(keepends=True)
@@ -219,44 +254,47 @@ class FortniteTrackerBot(discord.Client):
                 removed = [l for l in old_lines   if l not in new_lines]
 
                 if not (added or removed):
+                    logging.info("No Change Found, waiting for next poll.")
                     continue
 
-                # save state + diff
-                diff = {"added": added, "removed": removed}
+                # SAVE STATE & DIFF
+                if os.path.exists(prev_file):
+                    os.replace(prev_file, prev_file + ".bak")
                 with open(prev_file, "w", encoding="utf-8") as f:
                     json.dump(new_lines, f, indent=2)
+                diff = {"added": added, "removed": removed}
                 with open(diff_file, "w", encoding="utf-8") as f:
                     json.dump(diff, f, indent=2)
 
-                print(f"[{friendly}] detected +{len(added)} / -{len(removed)}")
+                logging.info(f"Change Found in {friendly} (+{len(added)}/-{len(removed)}) — preparing to send")
 
-                # build embed
+                # MAIN EMBED
                 embed = Embed(title=f"Update for {friendly}")
                 embed.add_field(name="Added lines",   value=str(len(added)), inline=True)
                 embed.add_field(name="Removed lines", value=str(len(removed)), inline=True)
 
-                plus  = self._parse_datatable(added,   "+")
-                minus = self._parse_datatable(removed,"-")
+                plus  = self._parse_datatable(added, "+")
+                minus = self._parse_datatable(removed, "-")
                 if plus or minus:
                     details = []
-                    for path,row,field,val,s in plus+minus:
-                        tag = "Added" if s=="+" else "Removed"
+                    for path, row, field, val, s in plus + minus:
+                        tag = "Added" if s == "+" else "Removed"
                         details.append(f"{tag} `{path}` row `{row}` → `{field}: {val}`")
                     embed.add_field(name="DataTable changes", value="\n".join(details), inline=False)
 
-                # send embed + diff file
-                await channel.send(embed=embed, file=File(diff_file, filename=f"{friendly}.json"))
-                print(f"[{friendly}] update sent with diff file {friendly}.json")
+                await self.send_embed_safe(channel, embed, file=File(diff_file, filename=f"{friendly}.json"))
 
-                # hotfix strings as embed
+                # HOTFIX EMBEDS
                 for hid, txt in self._parse_hotfix_strings(added):
                     hotfix = Embed(title="New hotfix string detected")
                     hotfix.add_field(name="Key",  value=hid, inline=False)
                     hotfix.add_field(name="Text", value=txt, inline=False)
-                    await channel.send(embed=hotfix)
-                    print(f"[{friendly}] hotfix string {hid} sent")
+                    logging.info(f"Hotfix string detected: {hid}")
+                    await self.send_embed_safe(channel, hotfix)
 
+            logging.info(f"Waiting for {POLL_INTERVAL} seconds before next poll")
             await asyncio.sleep(POLL_INTERVAL)
+
 
 if __name__ == "__main__":
     bot = FortniteTrackerBot()
