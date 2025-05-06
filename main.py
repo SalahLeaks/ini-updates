@@ -98,7 +98,7 @@ ENDPOINTS = [BASE + e["uniqueFilename"] for e in FILENAME_ENTRIES]
 FILENAME_MAP = {e["uniqueFilename"]: e["filename"] for e in FILENAME_ENTRIES}
 
 DISCORD_TOKEN = os.getenv("DISCORD_BOT_TOKEN")
-CHANNEL_ID    = int(os.getenv("DISCORD_CHANNEL_ID", "1369279397424533586"))
+CHANNEL_ID    = int(os.getenv("DISCORD_CHANNEL_ID", "YOUR_CHANNEL_ID"))
 POLL_INTERVAL = 60
 STATE_DIR     = "state"
 os.makedirs(STATE_DIR, exist_ok=True)
