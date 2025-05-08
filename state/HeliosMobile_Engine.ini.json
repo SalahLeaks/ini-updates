@@ -1,8 +1,5 @@
-{
-  "added": [
-    "[ConsoleVariables]\n",
-    "Fort.Rollback.UseEnhancedInputForValetCars=1\n",
-    "Fort.Rollback.UseEnhancedInputForMotorcycles=1"
-  ],
-  "removed": []
-}
+[
+  "[ConsoleVariables]\n",
+  "Fort.Rollback.UseEnhancedInputForValetCars=1\n",
+  "Fort.Rollback.UseEnhancedInputForMotorcycles=1"
+]

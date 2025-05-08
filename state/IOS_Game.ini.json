@@ -1,7 +1,4 @@
-{
-  "added": [
-    "[/Script/FortniteGame.FortGlobals]\n",
-    "MaxElectraFpsVideos=30"
-  ],
-  "removed": []
-}
+[
+  "[/Script/FortniteGame.FortGlobals]\n",
+  "MaxElectraFpsVideos=30"
+]

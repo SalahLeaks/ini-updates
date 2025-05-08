@@ -1,8 +1,5 @@
-{
-  "added": [
-    "[/Script/SpatialMetricsCore.SpatialMetricsSubsystem]\n",
-    "+AllowedMetricClasses=Class'/Script/FortSpatialMetrics.FortSpatialMetricsLootContainerCount'\n",
-    "+BlockedMetricClasses=Class'/Script/SpatialMetrics.SpatialMetricsSceneGraphEntityCount'\n"
-  ],
-  "removed": []
-}
+[
+  "[/Script/SpatialMetricsCore.SpatialMetricsSubsystem]\n",
+  "+AllowedMetricClasses=Class'/Script/FortSpatialMetrics.FortSpatialMetricsLootContainerCount'\n",
+  "+BlockedMetricClasses=Class'/Script/SpatialMetrics.SpatialMetricsSceneGraphEntityCount'\n"
+]

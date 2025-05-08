@@ -1,8 +1,5 @@
-{
-  "added": [
-    "[ConsoleVariables]\n",
-    "JunoConnectivityComponent.DestroyGraphEdgesOfNonOverlappingVertices=1\n",
-    "JunoConnectivityComponent.NonOverlappingVerticesMargin=2500"
-  ],
-  "removed": []
-}
+[
+  "[ConsoleVariables]\n",
+  "JunoConnectivityComponent.DestroyGraphEdgesOfNonOverlappingVertices=1\n",
+  "JunoConnectivityComponent.NonOverlappingVerticesMargin=2500"
+]

@@ -1,17 +1,14 @@
-{
-  "added": [
-    "[AssetHotfix]\n",
-    "+CurveTable=/Figment_S01/DataTables/OverrideGameData_Figment;RowUpdate;Default.PurpleStuff.TotalEffectiveHealthGain;0.0;75.0\n",
-    "+CurveTable=/Figment_S01/DataTables/OverrideGameData_Figment;RowUpdate;Default.PurpleStuff.TotalEffectiveHealthGain;1.0;75.0\n",
-    "+CurveTable=/Figment_S01/DataTables/OverrideGameData_Figment;RowUpdate;Default.PurpleStuff.TickRate;0.0;0.5\n",
-    "+CurveTable=/Figment_S01/DataTables/OverrideGameData_Figment;RowUpdate;Default.PurpleStuff.TickRate;1.0;0.5\n",
-    "+CurveTable=/Figment_S01/DataTables/OverrideGameData_Figment;RowUpdate;Default.PurpleStuff.MaxDuration;0.0;37.6\n",
-    "+CurveTable=/Figment_S01/DataTables/OverrideGameData_Figment;RowUpdate;Default.PurpleStuff.MaxDuration;1.0;37.6\n",
-    "+CurveTable=/Figment_S01/DataTables/OverrideGameData_Figment;RowUpdate;Default.PurpleStuff.IsEffectiveHealth;0.0;1.0\n",
-    "+CurveTable=/Figment_S01/DataTables/OverrideGameData_Figment;RowUpdate;Default.PurpleStuff.IsEffectiveHealth;1.0;1.0\n",
-    "+DataTable=/Figment_S01/DataTables/FigmentLootPackages;RowUpdate;WorldList.AthenaHighConsumables.13;ItemDefinition;/Game/Athena/Items/Consumables/Bush/Athena_Bush.Athena_Bush\n",
-    "+DataTable=/Figment_S01/DataTables/FigmentLootPackages;RowUpdate;WorldList.AthenaSupplyDropConsumables.17;ItemDefinition;/Game/Athena/Items/Consumables/Bush/Athena_Bush.Athena_Bush\n",
-    "+DataTable=/Figment_S01/DataTables/FigmentLootPackages;RowUpdate;WorldList.AthenaConsumables.13;ItemDefinition;/Game/Athena/Items/Consumables/Bush/Athena_Bush.Athena_Bush"
-  ],
-  "removed": []
-}
+[
+  "[AssetHotfix]\n",
+  "+CurveTable=/Figment_S01/DataTables/OverrideGameData_Figment;RowUpdate;Default.PurpleStuff.TotalEffectiveHealthGain;0.0;75.0\n",
+  "+CurveTable=/Figment_S01/DataTables/OverrideGameData_Figment;RowUpdate;Default.PurpleStuff.TotalEffectiveHealthGain;1.0;75.0\n",
+  "+CurveTable=/Figment_S01/DataTables/OverrideGameData_Figment;RowUpdate;Default.PurpleStuff.TickRate;0.0;0.5\n",
+  "+CurveTable=/Figment_S01/DataTables/OverrideGameData_Figment;RowUpdate;Default.PurpleStuff.TickRate;1.0;0.5\n",
+  "+CurveTable=/Figment_S01/DataTables/OverrideGameData_Figment;RowUpdate;Default.PurpleStuff.MaxDuration;0.0;37.6\n",
+  "+CurveTable=/Figment_S01/DataTables/OverrideGameData_Figment;RowUpdate;Default.PurpleStuff.MaxDuration;1.0;37.6\n",
+  "+CurveTable=/Figment_S01/DataTables/OverrideGameData_Figment;RowUpdate;Default.PurpleStuff.IsEffectiveHealth;0.0;1.0\n",
+  "+CurveTable=/Figment_S01/DataTables/OverrideGameData_Figment;RowUpdate;Default.PurpleStuff.IsEffectiveHealth;1.0;1.0\n",
+  "+DataTable=/Figment_S01/DataTables/FigmentLootPackages;RowUpdate;WorldList.AthenaHighConsumables.13;ItemDefinition;/Game/Athena/Items/Consumables/Bush/Athena_Bush.Athena_Bush\n",
+  "+DataTable=/Figment_S01/DataTables/FigmentLootPackages;RowUpdate;WorldList.AthenaSupplyDropConsumables.17;ItemDefinition;/Game/Athena/Items/Consumables/Bush/Athena_Bush.Athena_Bush\n",
+  "+DataTable=/Figment_S01/DataTables/FigmentLootPackages;RowUpdate;WorldList.AthenaConsumables.13;ItemDefinition;/Game/Athena/Items/Consumables/Bush/Athena_Bush.Athena_Bush"
+]

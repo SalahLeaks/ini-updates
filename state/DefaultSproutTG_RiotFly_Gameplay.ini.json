@@ -1,7 +1,4 @@
-{
-  "added": [
-    "[AssetHotfix]\n",
-    "+DataTable=/SproutTG_RiotFly_Gameplay/DataTable/DT_Sprout_RiotFly_Recipes_Stovetop;RowUpdate;FriedBulabirdEgg;Priority;1\n"
-  ],
-  "removed": []
-}
+[
+  "[AssetHotfix]\n",
+  "+DataTable=/SproutTG_RiotFly_Gameplay/DataTable/DT_Sprout_RiotFly_Recipes_Stovetop;RowUpdate;FriedBulabirdEgg;Priority;1\n"
+]

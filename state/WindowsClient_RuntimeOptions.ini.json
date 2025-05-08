@@ -1,7 +1,4 @@
-{
-  "added": [
-    "[/Script/FortniteGame.FortRuntimeOptions]\n",
-    "bFixAimAssistDeadzoneExploit=false\n"
-  ],
-  "removed": []
-}
+[
+  "[/Script/FortniteGame.FortRuntimeOptions]\n",
+  "bFixAimAssistDeadzoneExploit=false\n"
+]
