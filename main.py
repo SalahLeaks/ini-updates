@@ -1,4 +1,5 @@
 import os
+import io
 import json
 import asyncio
 import aiohttp
@@ -97,7 +98,6 @@ FILENAME_ENTRIES = [
     {"uniqueFilename": "31ef7bccad1c4471a9de0939e0c64e86", "filename": "DefaultDelMarGameEngine.ini"},
     {"uniqueFilename": "b175cde10a9a420f8e151bade9d33918", "filename": "Luna_Game.ini"},
 ]
-
 BASE_URL     = "https://fngw-mcp-gc-livefn.ol.epicgames.com/fortnite/api/cloudstorage/system/"
 ENDPOINTS    = [BASE_URL + e["uniqueFilename"] for e in FILENAME_ENTRIES]
 FILENAME_MAP = {e["uniqueFilename"]: e["filename"] for e in FILENAME_ENTRIES}
@@ -276,10 +276,16 @@ class FortniteTrackerBot(discord.Client):
                             details.append(f"{tag} `{path}` row `{row}` → `{field}: {val}`")
                         embed.add_field(name="DataTable changes", value="\n".join(details), inline=False)
 
+                    # send only the diff JSON, not the full dump
+                    diff_payload = {"added": added, "removed": removed}
+                    diff_bytes   = json.dumps(diff_payload, indent=2).encode("utf-8")
+                    diff_filename = f"{friendly_name}_diff.json"
+                    diff_file    = File(fp=io.BytesIO(diff_bytes), filename=diff_filename)
+
                     await self.send_embed_safe(
                         channel,
                         embed,
-                        file=File(state_file, filename=f"{friendly_name}.json")
+                        file=diff_file
                     )
 
                     # HOTFIX EMBEDS
