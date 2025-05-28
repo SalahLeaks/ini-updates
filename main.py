@@ -26,6 +26,7 @@ TOKEN_URL         = "https://account-public-service-prod.ol.epicgames.com/accoun
 
 # ——— ALL YOUR FILENAME ENTRIES ———
 FILENAME_ENTRIES = [
+
     {"uniqueFilename": "e000dd0687b34cffa247532a8d7e4fd0", "filename": "Switch_RuntimeOptions.ini"},
     {"uniqueFilename": "93f93825f97a48739ea8761983eae344", "filename": "DefaultHardware.ini"},
     {"uniqueFilename": "f9d8df13a971457aa587310f5677715e", "filename": "Helios_Game.ini"},
@@ -98,15 +99,23 @@ FILENAME_ENTRIES = [
     {"uniqueFilename": "8d3fbfa671c440208074936d6d556aa9", "filename": "IOS_RuntimeOptions.ini"},
     {"uniqueFilename": "f8b471a6ab424b9ca4cd661dcfb957b2", "filename": "Luna_Engine.ini"},
     {"uniqueFilename": "13eb6542dda140d9aceeb5f25f92a2ed", "filename": "SproutJobs_BaseGame.ini",}
+
 ]
 BASE_URL     = "https://fngw-mcp-gc-livefn.ol.epicgames.com/fortnite/api/cloudstorage/system/"
 ENDPOINTS    = [BASE_URL + e["uniqueFilename"] for e in FILENAME_ENTRIES]
 FILENAME_MAP = {e["uniqueFilename"]: e["filename"] for e in FILENAME_ENTRIES}
 
-DISCORD_TOKEN = os.getenv("DISCORD_BOT_TOKEN")
-CHANNEL_ID    = int(os.getenv("DISCORD_CHANNEL_ID", "1369304362941153330"))
-POLL_INTERVAL = int(os.getenv("POLL_INTERVAL", "60"))
-STATE_DIR     = "state"
+DISCORD_TOKEN    = os.getenv("DISCORD_BOT_TOKEN")
+CHANNEL_ID       = int(os.getenv("DISCORD_CHANNEL_ID", "1369304362941153330"))
+DISCORD_ROLE_ID  = os.getenv("DISCORD_ROLE_ID")  # ← new
+POLL_INTERVAL    = int(os.getenv("POLL_INTERVAL", "60"))
+STATE_DIR        = "state"
+
+if not DISCORD_ROLE_ID:
+    logging.error("Missing DISCORD_ROLE_ID environment variable")
+    exit(1)
+
+DISCORD_ROLE_ID = int(DISCORD_ROLE_ID)
 os.makedirs(STATE_DIR, exist_ok=True)
 
 
@@ -185,7 +194,8 @@ class FortniteTrackerBot(discord.Client):
         out = []
         for l in lines:
             m = pat.search(l)
-            if not m: continue
+            if not m:
+                continue
             inner = m.group("i")
             m2 = en.search(inner)
             if m2:
@@ -204,6 +214,7 @@ class FortniteTrackerBot(discord.Client):
         return out
 
     async def send_embed_safe(self, channel, embed, file=None):
+        """Same as before—safe splits on too-large embed exceptions."""
         try:
             await channel.send(embed=embed, file=file)
             logging.info("Message sent successfully")
@@ -228,8 +239,13 @@ class FortniteTrackerBot(discord.Client):
         await self.wait_until_ready()
         channel = self.get_channel(CHANNEL_ID)
         logging.info(f"Starting poll loop against {len(ENDPOINTS)} endpoints.")
+
         while True:
             logging.info("Fetching data from Cloud Storage endpoints…")
+
+            # collect all changes first
+            changes = []
+
             for url in ENDPOINTS:
                 key           = url.rsplit("/", 1)[-1]
                 friendly_name = FILENAME_MAP.get(key, key)
@@ -243,59 +259,76 @@ class FortniteTrackerBot(discord.Client):
                     continue
 
                 new_lines = text.splitlines(keepends=True)
-
-                # load previous full response (if any)
                 old_lines = []
                 if os.path.isfile(state_file):
                     with open(state_file, "r", encoding="utf-8") as f:
                         old_lines = json.load(f)
 
-                # compute diff
                 added   = [l for l in new_lines if l not in old_lines]
                 removed = [l for l in old_lines if l not in new_lines]
 
                 if not (added or removed):
                     logging.info(f"[{friendly_name}] No changes found.")
-                else:
-                    logging.info(f"Change found in {friendly_name} (+{len(added)}/-{len(removed)}) — sending update")
+                    continue
 
-                    # overwrite state file with the new full response
-                    with open(state_file, "w", encoding="utf-8") as f:
-                        json.dump(new_lines, f, indent=2)
+                logging.info(f"Change found in {friendly_name} (+{len(added)}/-{len(removed)})")
 
-                    # MAIN EMBED
-                    embed = Embed(title=f"Update for {friendly_name}")
-                    embed.add_field(name="Added lines",   value=str(len(added)),   inline=True)
-                    embed.add_field(name="Removed lines", value=str(len(removed)), inline=True)
+                # overwrite state file immediately
+                with open(state_file, "w", encoding="utf-8") as f:
+                    json.dump(new_lines, f, indent=2)
 
-                    plus  = self._parse_datatable(added, "+")
-                    minus = self._parse_datatable(removed, "-")
-                    if plus or minus:
-                        details = []
-                        for path, row, field, val, s in plus + minus:
-                            tag = "Added" if s == "+" else "Removed"
-                            details.append(f"{tag} `{path}` row `{row}` → `{field}: {val}`")
-                        embed.add_field(name="DataTable changes", value="\n".join(details), inline=False)
+                # build main embed + diff file
+                embed = Embed(title=f"Update for {friendly_name}")
+                embed.add_field(name="Added lines",   value=str(len(added)),   inline=True)
+                embed.add_field(name="Removed lines", value=str(len(removed)), inline=True)
 
-                    # send only the diff JSON, not the full dump
-                    diff_payload = {"added": added, "removed": removed}
-                    diff_bytes   = json.dumps(diff_payload, indent=2).encode("utf-8")
-                    diff_filename = f"{friendly_name}_diff.json"
-                    diff_file    = File(fp=io.BytesIO(diff_bytes), filename=diff_filename)
+                plus  = self._parse_datatable(added, "+")
+                minus = self._parse_datatable(removed, "-")
+                if plus or minus:
+                    details = []
+                    for path, row, field, val, s in plus + minus:
+                        tag = "Added" if s == "+" else "Removed"
+                        details.append(f"{tag} `{path}` row `{row}` → `{field}: {val}`")
+                    embed.add_field(name="DataTable changes", value="\n".join(details), inline=False)
 
-                    await self.send_embed_safe(
-                        channel,
-                        embed,
-                        file=diff_file
-                    )
+                diff_payload = {"added": added, "removed": removed}
+                diff_bytes   = json.dumps(diff_payload, indent=2).encode("utf-8")
+                diff_filename = f"{friendly_name}_diff.json"
+                diff_file    = File(fp=io.BytesIO(diff_bytes), filename=diff_filename)
 
-                    # HOTFIX EMBEDS
-                    for hid, txt in self._parse_hotfix_strings(added):
-                        hotfix = Embed(title="New hotfix string detected")
-                        hotfix.add_field(name="Key",  value=hid, inline=False)
-                        hotfix.add_field(name="Text", value=txt, inline=False)
-                        logging.info(f"Hotfix string detected: {hid}")
-                        await self.send_embed_safe(channel, hotfix)
+                # build any hotfix embeds
+                hotfix_embeds = []
+                for hid, txt in self._parse_hotfix_strings(added):
+                    hot = Embed(title="New hotfix string detected")
+                    hot.add_field(name="Key",  value=hid, inline=False)
+                    hot.add_field(name="Text", value=txt, inline=False)
+                    hotfix_embeds.append(hot)
+
+                changes.append({
+                    "embed": embed,
+                    "file": diff_file,
+                    "hotfixes": hotfix_embeds
+                })
+
+            # now send all collected changes, pinging the role once in the first message
+            if changes:
+                total = len(changes)
+                for idx, change in enumerate(changes):
+                    content = f"<@&{DISCORD_ROLE_ID}>" if idx == 0 and total > 1 else None
+
+                    # first embed: send with content if needed
+                    if idx == 0 and content:
+                        await channel.send(
+                            content=content,
+                            embed=change["embed"],
+                            file=change["file"]
+                        )
+                    else:
+                        await self.send_embed_safe(channel, change["embed"], file=change["file"])
+
+                    # hotfix embeds (never re-ping)
+                    for hot in change["hotfixes"]:
+                        await self.send_embed_safe(channel, hot)
 
             logging.info(f"Waiting for {POLL_INTERVAL} seconds before next poll")
             await asyncio.sleep(POLL_INTERVAL)
