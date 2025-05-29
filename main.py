@@ -79,7 +79,7 @@ FILENAME_ENTRIES = [
     {"uniqueFilename": "eedca963133e4c959bef113bff80b8e8", "filename": "DefaultJunoGameNativeEngine.ini"},
     {"uniqueFilename": "bbb036613a204f78a36a4653bf5e6bd0", "filename": "LunaMobile_Game.ini"},
     {"uniqueFilename": "c8a801897ec04667973d4f12f4b12399", "filename": "PS5_Scalability.ini"},
-    {"uniqueFilename": "dc24c42ffe9a4cc5ae3a9946b4e5e95c", "filename": "PS5_Engine.ini"},
+    {"uniqueFilename": "dc24c42ffe9a4cc5ae3a9946b4e5e95d", "filename": "PS5_Engine.ini"},
     {"uniqueFilename": "248d9bec1311419b81f08df4e1473940", "filename": "PS5JunoGameNativeDeviceProfiles.ini"},
     {"uniqueFilename": "7e2a66ce68554814b1bd0aa14351cd71", "filename": "WindowsClient_Game.ini"},
     {"uniqueFilename": "600a5f12fdfd491dbe8ffb62a3d8a8cb", "filename": "HeliosMobile_Game.ini"},
@@ -94,8 +94,8 @@ FILENAME_ENTRIES = [
     {"uniqueFilename": "31ef7bccad1c4471a9de0939e0c64e86", "filename": "DefaultDelMarGameEngine.ini"},
     {"uniqueFilename": "b175cde10a9a420f8e151bade9d33918", "filename": "Luna_Game.ini"},
     {"uniqueFilename": "a22d837b6a2b46349421259c0a5411bf", "filename": "DefaultGame.ini"},
-    {"uniqueFilename": "8d3fbfa671c4402080749368d556aa9", "filename": "IOS_RuntimeOptions.ini"},
-    {"uniqueFilename": "f8b471a6ab4249ca4cd661dcfb957b2", "filename": "Luna_Engine.ini"},
+    {"uniqueFilename": "8d3fbfa671c440208074936d6d556aa9", "filename": "IOS_RuntimeOptions.ini"},
+    {"uniqueFilename": "f8b471a6ab424b9ca4cd661dcfb957b2", "filename": "Luna_Engine.ini"},
     {"uniqueFilename": "13eb6542dda140d9aceeb5f25f92a2ed", "filename": "SproutJobs_BaseGame.ini"},
 ]
 BASE_URL     = "https://fngw-mcp-gc-livefn.ol.epicgames.com/fortnite/api/cloudstorage/system/"
