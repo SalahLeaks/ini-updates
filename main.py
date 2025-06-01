@@ -25,7 +25,7 @@ CLIENT_SECRET  = os.getenv("EPIC_CLIENT_SECRET")
 TOKEN_URL      = "https://account-public-service-prod.ol.epicgames.com/account/api/oauth/token"
 
 FILENAME_ENTRIES = [
-        {"uniqueFilename": "5b512d02374d4cf788a45db70830aced", "filename": "AndroidDelMarGameEngine.ini"},
+    {"uniqueFilename": "5b512d02374d4cf788a45db70830aced", "filename": "AndroidDelMarGameEngine.ini"},
     {"uniqueFilename": "69f6b4b9a8d44714823e88a4168fa05c", "filename": "DefaultSproutNativeEngine.ini"},
     {"uniqueFilename": "8ac9796933b34490877cf379b1b56340", "filename": "IOSDelMarGameEngine.ini"},
     {"uniqueFilename": "05222e1e3b1c4cdf8b9bd4cc5ac8e474", "filename": "XB1_Game.ini"},
@@ -65,7 +65,7 @@ FILENAME_ENTRIES = [
     {"uniqueFilename": "74fc422917244c5b97ad8189f4226a3c", "filename": "ValkyrieEditorConfig-FortniteGFS.json"},
     {"uniqueFilename": "de74e4fc39a147339df12f324d9201f4", "filename": "SproutNativeEngine.ini"},
     {"uniqueFilename": "75546d2569d94f9c9a9caff7e290c48b", "filename": "XB1_DeviceProfiles.ini"},
-    {"uniqueFilename": "4076f7d595cc432fa6bb9d8694adcf2e", "filename": "PS4_Game.ini"},
+    {"uniqueFilename": "4076f7d595cc432fa4aeedceadcf2e", "filename": "PS4_Game.ini"},
     {"uniqueFilename": "6c33ead15c254f0da675c8c5aef79e84", "filename": "XB1_RuntimeOptions.ini"},
     {"uniqueFilename": "3f9feaebb56043bc9792b0805a821a8d", "filename": "PS4_RuntimeOptions.ini"},
     {"uniqueFilename": "c0de0ad59f634afa8fb7536183b43d44", "filename": "MacClient_Game.ini"},
@@ -74,7 +74,7 @@ FILENAME_ENTRIES = [
     {"uniqueFilename": "dbfa6466d8a345ebb1ece39b5609c9f0", "filename": "XB1JunoGameNativeDeviceProfiles.ini"},
     {"uniqueFilename": "d16053edfaa74782b72283b51e7d393f", "filename": "DefaultFigmentCoreGame.ini"},
     {"uniqueFilename": "e3978add72f649fb81a67a1b7ad89445", "filename": "GFNMobile_RuntimeOptions.ini"},
-    {"uniqueFilename": "311cc2f8c6fa4998b2f115ac52a70f9c", "filename": "XSXJunoGameNativeDeviceProfiles.ini"},
+    {"uniqueFilename": "311cc2f8c6fa4998b7d115c2a70f9c", "filename": "XSXJunoGameNativeDeviceProfiles.ini"},
     {"uniqueFilename": "ba905cc6a853447fb5d6cf41b0ec68d0", "filename": "DefaultEditor.ini"},
     {"uniqueFilename": "fdd7170801c54f08afb89d090dffb5f9", "filename": "LunaMobile_Engine.ini"},
     {"uniqueFilename": "ee3aa8eba49c4a37a635d3231becad1e", "filename": "SwitchJunoGameNativeDeviceProfiles.ini"},
@@ -112,7 +112,7 @@ FILENAME_ENTRIES = [
     {"uniqueFilename": "600a5f12fdfd491dbe8ffb62a3d8a8cb", "filename": "HeliosMobile_Game.ini"},
     {"uniqueFilename": "1c7eb1831955468f949854f706ed542c", "filename": "DefaultPartnerLimeGFSEngine.ini"},
     {"uniqueFilename": "3460cbe1c57d4a838ace32951a4d7171", "filename": "DefaultEngine.ini"},
-    {"uniqueFilename": "494983533c8d4cc38d3f3cd3c81f75f4", "filename": "GFNMobile_Game.ini"},
+    {"uniqueFilename": "4949835338d4cc38d3f3cd3c81f75f4", "filename": "GFNMobile_Game.ini"},
     {"uniqueFilename": "6ad739ad7483464eb6448710cba4cf1e", "filename": "SwitchSproutNativeEngine.ini"},
     {"uniqueFilename": "ea95a5ff1474476f8ce9f0c500dd040b", "filename": "DefaultLimeGFSEngine.ini"},
     {"uniqueFilename": "6eab62f6409e490b871e5c509503c579", "filename": "Android_RuntimeOptions.ini"},
@@ -135,6 +135,7 @@ CHANNEL_ID    = int(os.getenv("DISCORD_CHANNEL_ID", "1369279347415846932"))
 POLL_INTERVAL = int(os.getenv("POLL_INTERVAL", "60"))
 STATE_DIR     = "state"
 os.makedirs(STATE_DIR, exist_ok=True)
+
 
 class FortniteTrackerBot(discord.Client):
     def __init__(self):
@@ -224,37 +225,76 @@ class FortniteTrackerBot(discord.Client):
         for l in lines:
             if f"{sign}DataTable=" not in l:
                 continue
+
+            # Strip the leading '+' or '-' and newline
             body = l.lstrip(f"{sign} ").rstrip()
+
+            # Try splitting off the “DataTable=” prefix
             try:
                 _, rest = body.split("=", 1)
             except ValueError:
+                # Malformed line, no '=' present
                 continue
+
+            # Now rest might be one of two formats:
+            # 1) path;action;row;field;value
+            # 2) path;AddRow;"{JSON...}"
+            # 3) path;TableUpdate;"[{JSON array}]"
             parts = rest.split(";", 4)
+
+            # Case 1: Exactly five pieces → (path, action, row, field, value)
             if len(parts) == 5:
                 path, action, row, field, value = parts
                 out.append((path, row, field, value, sign))
+
+            # Case 2 or 3: Exactly three pieces → (path, action, inner_json)
             elif len(parts) == 3:
                 path, action, inner = parts
+                # Handle AddRow as before
                 if action == "AddRow":
                     try:
-                        content = inner[1:-1] if inner.startswith('"') and inner.endswith('"') else inner
-                        data = json.loads(content)
+                        # Strip surrounding quotes if present
+                        if inner.startswith('"') and inner.endswith('"'):
+                            inner_content = inner[1:-1]
+                        else:
+                            inner_content = inner
+                        data = json.loads(inner_content)
                         row_name = data.get("Name", "")
                         wrapped_str = data.get("WrappedString", "")
                         out.append((path, row_name, " WrappedString", wrapped_str, sign))
                     except json.JSONDecodeError:
-                        logging.warning(f"[parse_datatable] JSON‑decode failed: {inner}")
+                        logging.warning(f"[parse_datatable] Failed to JSON‐decode AddRow content: {inner}")
+                        continue
+
+                # Handle TableUpdate similarly
                 elif action == "TableUpdate":
                     try:
-                        content = inner[1:-1] if inner.startswith('"') and inner.endswith('"') else inner
-                        data_list = json.loads(content)
+                        if inner.startswith('"') and inner.endswith('"'):
+                            inner_content = inner[1:-1]
+                        else:
+                            inner_content = inner
+                        data_list = json.loads(inner_content)
                         for entry in data_list:
-                            name = entry.get("Name","")
-                            ti = entry.get("TaskIdentifier",{}) or {}
-                            out.append((path, name, "TaskIdentifier.TagName", ti.get("TagName",""), sign))
-                            out.append((path, name, "LinkedQuestDefinition", entry.get("LinkedQuestDefinition",""), sign))
+                            name = entry.get("Name", "")
+                            task_tag = ""
+                            ti_obj = entry.get("TaskIdentifier", {})
+                            if isinstance(ti_obj, dict):
+                                task_tag = ti_obj.get("TagName", "")
+                            link = entry.get("LinkedQuestDefinition", "")
+                            out.append((path, name, "TaskIdentifier.TagName", task_tag, sign))
+                            out.append((path, name, "LinkedQuestDefinition", link, sign))
                     except json.JSONDecodeError:
-                        logging.warning(f"[parse_datatable] JSON‑decode failed: {inner}")
+                        logging.warning(f"[parse_datatable] Failed to JSON‐decode TableUpdate content: {inner}")
+                        continue
+
+                else:
+                    # If action isn't AddRow or TableUpdate, skip
+                    continue
+
+            else:
+                # Any other length is unexpected; skip
+                continue
+
         return out
 
     def _parse_curvetable(self, lines, sign):
@@ -264,159 +304,218 @@ class FortniteTrackerBot(discord.Client):
                 continue
             body = l.lstrip(f"{sign} ").rstrip()
             try:
-                _, rest = body.split("=",1)
+                _, rest = body.split("=", 1)
             except ValueError:
                 continue
-            parts = rest.split(";",4)
-            if len(parts)<5:
+            parts = rest.split(";", 4)
+            if len(parts) < 5:
                 continue
-            path, action, idf, inp, new_val = parts
-            if "." not in idf:
+            path, action, identifier, input_val, new_val = parts
+            if "." not in identifier:
                 continue
-            row, field = idf.rsplit(".",1)
+            row, field = identifier.rsplit(".", 1)
             out.append((path, row, field, new_val, sign))
         return out
 
     async def send_embed_safe(self, channel, embed, file=None):
+        """
+        Upgraded from Code 1: logs on success, splits into “(part X/Y)”, logs each split part.
+        """
         embed.colour = None
         try:
             await channel.send(embed=embed, file=file)
+            logging.info("Message sent successfully")
         except discord.HTTPException as he:
             msg = str(he).lower()
             if "embeds too large" in msg or "maximum number of embeds" in msg:
                 fields = embed.fields
-                for i in range(0, len(fields), 5):
-                    part = Embed(title=f"{embed.title} (part {i//5+1})", colour=None)
-                    for f in fields[i:i+5]:
+                # Break into chunks of 5 fields each
+                chunks = [fields[i : i + 5] for i in range(0, len(fields), 5)]
+                for idx, chunk in enumerate(chunks, 1):
+                    part = Embed(title=f"{embed.title} (part {idx}/{len(chunks)})", colour=None)
+                    for f in chunk:
                         part.add_field(name=f.name, value=f.value, inline=f.inline)
                     try:
                         await channel.send(embed=part)
-                    except:
+                        logging.info(f"Sent split embed part {idx}/{len(chunks)}")
+                    except Exception:
                         pass
-        except:
+        except Exception:
             pass
 
     async def poll_loop(self):
         await self.wait_until_ready()
-        chan = self.get_channel(CHANNEL_ID)
-        logging.info(f"Polling {len(ENDPOINTS)} endpoints every {POLL_INTERVAL}s")
+        channel = self.get_channel(CHANNEL_ID)
+        logging.info(f"Starting poll loop against {len(ENDPOINTS)} endpoints.")
 
         while True:
+            logging.info("Fetching data from Cloud Storage endpoints…")
             for url in ENDPOINTS:
-                key = url.rsplit("/",1)[-1]
-                name = FILENAME_MAP.get(key, key)
-                state_file = os.path.join(STATE_DIR, f"{name}.json")
+                key           = url.rsplit("/", 1)[-1]
+                friendly_name = FILENAME_MAP.get(key, key)
+                state_file    = os.path.join(STATE_DIR, f"{friendly_name}.json")
 
+                # ——— FETCH RAW TEXT ———
                 try:
                     text = await self.fetch_json(url)
                 except Exception as e:
-                    logging.info(f"[{name}] fetch failed: {e}")
+                    logging.info(f"[{friendly_name}] fetch error: {e} — skipping")
                     continue
 
+                # ——— DIFF LINES ———
                 new_lines = text.splitlines(keepends=True)
                 old_lines = []
                 if os.path.isfile(state_file):
-                    with open(state_file,"r",encoding="utf-8") as f:
+                    with open(state_file, "r", encoding="utf-8") as f:
                         old_lines = json.load(f)
 
                 added   = [l for l in new_lines if l not in old_lines]
                 removed = [l for l in old_lines if l not in new_lines]
+
                 if not (added or removed):
+                    logging.info(f"[{friendly_name}] No changes found.")
                     continue
 
-                # save state
-                with open(state_file,"w",encoding="utf-8") as f:
+                logging.info(f"Change found in {friendly_name} (+{len(added)}/-{len(removed)}) — processing")
+
+                # Overwrite state file for next iteration
+                with open(state_file, "w", encoding="utf-8") as f:
                     json.dump(new_lines, f, indent=2)
 
-                # parse
-                dt_plus  = self._parse_datatable(added, "+")
-                dt_minus = self._parse_datatable(removed, "-")
-                ct_plus  = self._parse_curvetable(added, "+")
-                ct_minus = self._parse_curvetable(removed, "-")
-                strs     = self._parse_hotfix_strings(added)
+                # ——— PARSE RAW DIFF ———
+                dt_plus       = self._parse_datatable(added, "+")
+                dt_minus      = self._parse_datatable(removed, "-")
+                ct_plus       = self._parse_curvetable(added, "+")
+                ct_minus      = self._parse_curvetable(removed, "-")
+                hotfixes_plus = self._parse_hotfix_strings(added)
 
-                # prepare raw diff file
-                raw = {"added":added, "removed":removed}
-                diff_bytes = json.dumps(raw, indent=2).encode("utf-8")
-                diff_file  = File(fp=io.BytesIO(diff_bytes), filename=f"{name}_diff.json")
+                # Prepare raw-diff file (always needed if no parsed mods)
+                diff_payload = {"added": added, "removed": removed}
+                diff_bytes   = json.dumps(diff_payload, indent=2).encode("utf-8")
+                diff_file    = File(fp=io.BytesIO(diff_bytes), filename=f"{friendly_name}_diff.json")
 
-                total_count = len(strs) + len(dt_plus)+len(dt_minus)+len(ct_plus)+len(ct_minus)
+                # ——— CALCULATE total_parsed = total modifications found ———
+                total_parsed = (
+                    len(hotfixes_plus)
+                    + len(dt_plus)
+                    + len(dt_minus)
+                    + len(ct_plus)
+                    + len(ct_minus)
+                )
 
-                # BUILD EMBEDS
+                # ——— EARLY ZERO-PARSED-MODS BRANCH ———
+                if total_parsed == 0:
+                    count_embed = Embed(title=f"Parsed Updates in {friendly_name}")
+                    count_embed.add_field(name="Strings",     value="0", inline=True)
+                    count_embed.add_field(name="DataTables",  value="0", inline=True)
+                    count_embed.add_field(name="CurveTables", value="0", inline=True)
+                    count_embed.add_field(name="Total Mods",  value="0", inline=False)
+                    count_embed.set_footer(text=f"See attached {friendly_name}_diff.json for details")
+
+                    # Send the “zero‐counts” embed + raw‐diff JSON, then skip to next file
+                    await self.send_embed_safe(channel, count_embed, file=diff_file)
+                    logging.info(f"No parsed mods; sent raw diff JSON with parsed‐style embed for {friendly_name}.")
+                    continue
+
+                # ——— BUILD DETAIL EMBEDS (same batching style as Code 1) ———
                 embeds = []
 
-                # detail embeds
-                for sign_list, title_prefix in [(dt_plus+dt_minus, "➥ **DataTable**"), (ct_plus+ct_minus, "")]:
-                    if sign_list:
-                        by_path = {}
-                        for path,row,field,val,sg in sign_list:
-                            by_path.setdefault(path,[]).append((row,field,val,sg))
-                        for path,mods in by_path.items():
-                            e = Embed(title="Summary")
-                            if title_prefix:
-                                e.description = f"{title_prefix} Modification: ```{path}```"
-                            else:
-                                e.description = f"```{path}```"
-                            for row,field,val,sg in mods:
-                                name = f"{row} → {field}" if title_prefix else f"{row}.{field}"
-                                e.add_field(name=name, value=val, inline=False)
-                            embeds.append(e)
+                # DataTable modifications
+                dt_changes = dt_plus + dt_minus
+                if dt_changes:
+                    by_path = {}
+                    for path, row, field, val, sign in dt_changes:
+                        by_path.setdefault(path, []).append((row, field, val, sign))
+                    for path, mods in by_path.items():
+                        e = Embed(title="Summary")
+                        e.description = f"➥ **DataTable Modification:** ```{path}```"
+                        for row, field, val, sign in mods:
+                            e.add_field(name=f"{row} → {field}", value=val, inline=False)
+                        embeds.append(e)
 
-                if strs:
+                # CurveTable modifications
+                ct_changes = ct_plus + ct_minus
+                if ct_changes:
+                    by_path = {}
+                    for path, row, field, val, sign in ct_changes:
+                        by_path.setdefault(path, []).append((row, field, val, sign))
+                    for path, mods in by_path.items():
+                        e = Embed(title="Summary")
+                        e.description = f"```{path}```"
+                        for row, field, val, sign in mods:
+                            e.add_field(name=f"{row}.{field}", value=val, inline=False)
+                        embeds.append(e)
+
+                # Hotfix string modifications
+                if hotfixes_plus:
                     e = Embed(title="Summary")
-                    e.description = "➥ **String modifications**"
-                    for k,t in strs:
-                        e.add_field(name=f"**{k}**", value=f"➥ {t}", inline=False)
+                    e.description = "➥ **String modification detected**"
+                    for key, text in hotfixes_plus:
+                        e.add_field(name=f"**{key}**", value=f"➥ {text}", inline=False)
                     embeds.append(e)
 
-                # total summary
-                total = Embed(title=f"Parsed Updates in {name}")
-                total.add_field(name="Strings",     value=str(len(strs)),    inline=True)
-                total.add_field(name="DataTables",  value=str(len(dt_plus)),  inline=True)
-                total.add_field(name="CurveTables", value=str(len(ct_plus)),  inline=True)
-                total.add_field(name="Total Mods",  value=str(total_count),   inline=False)
-                if total_count == 0:
-                    total.clear_fields()
-                    total.add_field(name="Strings",     value="0", inline=True)
-                    total.add_field(name="DataTables",  value="0", inline=True)
-                    total.add_field(name="CurveTables", value="0", inline=True)
-                    total.add_field(name="Total Mods",  value="0", inline=False)
-                    total.set_footer(text=f"See attached {name}_diff.json for details")
-                    await chan.send(embeds=embeds + [total], file=diff_file)
-                else:
-                    parsed = {
-                        "section_name": name,
-                        "modifications": []
-                    }
-                    for k,t in strs:
-                        parsed["modifications"].append({"type":"String","key":k,"value":t})
-                    for p,r,f,v,sg in dt_plus+dt_minus:
-                        parsed["modifications"].append({
-                            "type":"DataTable","path":p,
-                            "row_name":r,"field":f,
-                            "new_value":v,
-                            "change":"Added" if sg=="+" else "Removed"
-                        })
-                    for p,r,f,v,sg in ct_plus+ct_minus:
-                        parsed["modifications"].append({
-                            "type":"CurveTable","path":p,
-                            "row_name":r,"field":f,
-                            "new_value":v,
-                            "change":"Added" if sg=="+" else "Removed"
-                        })
+                # ——— WRITE & SEND PARSED JSON + COUNT EMBED ———
+                section = {
+                    "section_name": friendly_name,
+                    "modifications": []
+                }
+                for k, t in hotfixes_plus:
+                    section["modifications"].append({
+                        "type": "String", "key": k, "value": t
+                    })
+                for path, row, field, val, s in dt_plus + dt_minus:
+                    section["modifications"].append({
+                        "type": "DataTable", "path": path,
+                        "row_name": row, "field": field,
+                        "new_value": val,
+                        "change": "Added" if s == "+" else "Removed"
+                    })
+                for path, row, field, val, s in ct_plus + ct_minus:
+                    section["modifications"].append({
+                        "type": "CurveTable", "path": path,
+                        "row_name": row, "field": field,
+                        "new_value": val,
+                        "change": "Added" if s == "+" else "Removed"
+                    })
 
-                    parsed_path = os.path.join(STATE_DIR, f"{name}_parsed.json")
-                    with open(parsed_path,"w",encoding="utf-8") as f:
-                        json.dump([parsed], f, indent=4, ensure_ascii=False)
-                    with open(parsed_path,"rb") as fp:
-                        parsed_file = File(fp, filename=os.path.basename(parsed_path))
+                parsed_path = os.path.join(STATE_DIR, f"{friendly_name}_parsed.json")
+                with open(parsed_path, "w", encoding="utf-8") as f:
+                    json.dump([section], f, indent=4, ensure_ascii=False)
 
-                    total.set_footer(text=f"See attached {os.path.basename(parsed_path)} for details")
-                    await chan.send(embeds=embeds + [total], file=parsed_file)
+                count_embed = Embed(title=f"Parsed Updates in {friendly_name}")
+                count_embed.add_field(name="Strings",     value=str(len(hotfixes_plus)), inline=True)
+                count_embed.add_field(name="DataTables",  value=str(len(dt_plus)),         inline=True)
+                count_embed.add_field(name="CurveTables", value=str(len(ct_plus)),         inline=True)
+                total_mods = (
+                    len(hotfixes_plus)
+                    + len(dt_plus)
+                    + len(dt_minus)
+                    + len(ct_plus)
+                    + len(ct_minus)
+                )
+                count_embed.add_field(name="Total Mods", value=str(total_mods), inline=False)
+                count_embed.set_footer(text=f"See attached {os.path.basename(parsed_path)} for details")
 
-                logging.info(f"Sent update for {name} (+{len(added)}/-{len(removed)})")
+                with open(parsed_path, "rb") as fp:
+                    parsed_file = File(fp, filename=os.path.basename(parsed_path))
 
+                # ——— NEW: chunk the final embeds list into blocks of max 20 ———
+                all_embeds = embeds + [count_embed]
+                MAX_EMBEDS_PER_MESSAGE = 20
+
+                for i in range(0, len(all_embeds), MAX_EMBEDS_PER_MESSAGE):
+                    chunk = all_embeds[i : i + MAX_EMBEDS_PER_MESSAGE]
+                    # Only attach parsed_file to the last chunk
+                    if i + MAX_EMBEDS_PER_MESSAGE >= len(all_embeds):
+                        await channel.send(embeds=chunk, file=parsed_file)
+                    else:
+                        await channel.send(embeds=chunk)
+
+                logging.info(f"Sent update for {friendly_name} (+{len(added)}/-{len(removed)})")
+
+            logging.info(f"Waiting {POLL_INTERVAL}s before next poll")
             await asyncio.sleep(POLL_INTERVAL)
+
 
 if __name__ == "__main__":
     bot = FortniteTrackerBot()
