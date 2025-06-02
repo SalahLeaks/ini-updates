@@ -1,0 +1,6 @@
+[
+  "[ConsoleVariables]\n",
+  "WindowsPlatformCrashContext.ScreenshotOnGPUCrash=1\n",
+  "Fort.OfferRHIChangeForStabilityDuringLogin=0\n",
+  "Fort.Windows.PerVendorCVars.IntelGraphicsGen9=r.localfogvolume=0"
+]

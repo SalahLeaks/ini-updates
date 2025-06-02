@@ -1,0 +1,15 @@
+[
+    {
+        "section_name": "DefaultSproutTG_RiotFly_Gameplay.ini",
+        "modifications": [
+            {
+                "type": "DataTable",
+                "path": "/SproutTG_RiotFly_Gameplay/DataTable/DT_Sprout_RiotFly_Recipes_Stovetop",
+                "row_name": "FriedBulabirdEgg",
+                "field": "Priority",
+                "new_value": "1",
+                "change": "Added"
+            }
+        ]
+    }
+]

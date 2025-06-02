@@ -1,0 +1,16 @@
+[
+  "[Core.Log]\n",
+  "LogGameplayStreamingHandler=Verbose\n",
+  "MatchmakingLog=Verbose\n",
+  "[ConsoleVariables_HighPriority]\n",
+  "+CVars=sg.ViewDistanceQuality=1\n",
+  "+CVars=sg.AntiAliasingQuality=0\n",
+  "+CVars=sg.ShadowQuality=1\n",
+  "+CVars=sg.GlobalIlluminationQuality=1\n",
+  "+CVars=sg.ReflectionQuality=1\n",
+  "+CVars=sg.PostProcessQuality=1\n",
+  "+CVars=sg.TextureQuality=1\n",
+  "+CVars=sg.EffectsQuality=1\n",
+  "+CVars=sg.FoliageQuality=1\n",
+  "+CVars=sg.ShadingQuality=1\n"
+]

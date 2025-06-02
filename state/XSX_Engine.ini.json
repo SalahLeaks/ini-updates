@@ -1,0 +1,7 @@
+[
+  "[ConsoleVariables]\n",
+  "Sprout.InGameLocker.EnableStreamingTexturePoolFlushing=0\n",
+  "MM.UpdateIslandManagerFirst=0\n",
+  "r.Visibility.DynamicMeshElements.Parallel=false\n",
+  "Mutable.StreamMeshLODsEnabled=0"
+]

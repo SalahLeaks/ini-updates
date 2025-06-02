@@ -1,6 +1,7 @@
 import os
 import io
 import json
+import math
 import asyncio
 import aiohttp
 import discord
@@ -12,7 +13,6 @@ import logging
 
 load_dotenv()
 
-# ——— CLEAN LOGGING SETUP ———
 logging.basicConfig(
     level=logging.INFO,
     format='[Logs] %(message)s'
@@ -65,7 +65,7 @@ FILENAME_ENTRIES = [
     {"uniqueFilename": "74fc422917244c5b97ad8189f4226a3c", "filename": "ValkyrieEditorConfig-FortniteGFS.json"},
     {"uniqueFilename": "de74e4fc39a147339df12f324d9201f4", "filename": "SproutNativeEngine.ini"},
     {"uniqueFilename": "75546d2569d94f9c9a9caff7e290c48b", "filename": "XB1_DeviceProfiles.ini"},
-    {"uniqueFilename": "4076f7d595cc432fa4aeedceadcf2e", "filename": "PS4_Game.ini"},
+    {"uniqueFilename": "4076f7d595cc432fa6bb9d8694adcf2e", "filename": "PS4_Game.ini"},
     {"uniqueFilename": "6c33ead15c254f0da675c8c5aef79e84", "filename": "XB1_RuntimeOptions.ini"},
     {"uniqueFilename": "3f9feaebb56043bc9792b0805a821a8d", "filename": "PS4_RuntimeOptions.ini"},
     {"uniqueFilename": "c0de0ad59f634afa8fb7536183b43d44", "filename": "MacClient_Game.ini"},
@@ -74,7 +74,7 @@ FILENAME_ENTRIES = [
     {"uniqueFilename": "dbfa6466d8a345ebb1ece39b5609c9f0", "filename": "XB1JunoGameNativeDeviceProfiles.ini"},
     {"uniqueFilename": "d16053edfaa74782b72283b51e7d393f", "filename": "DefaultFigmentCoreGame.ini"},
     {"uniqueFilename": "e3978add72f649fb81a67a1b7ad89445", "filename": "GFNMobile_RuntimeOptions.ini"},
-    {"uniqueFilename": "311cc2f8c6fa4998b7d115c2a70f9c", "filename": "XSXJunoGameNativeDeviceProfiles.ini"},
+    {"uniqueFilename": "311cc2f8c6fa4998b2f115ac52a70f9c", "filename": "XSXJunoGameNativeDeviceProfiles.ini"},
     {"uniqueFilename": "ba905cc6a853447fb5d6cf41b0ec68d0", "filename": "DefaultEditor.ini"},
     {"uniqueFilename": "fdd7170801c54f08afb89d090dffb5f9", "filename": "LunaMobile_Engine.ini"},
     {"uniqueFilename": "ee3aa8eba49c4a37a635d3231becad1e", "filename": "SwitchJunoGameNativeDeviceProfiles.ini"},
@@ -112,7 +112,7 @@ FILENAME_ENTRIES = [
     {"uniqueFilename": "600a5f12fdfd491dbe8ffb62a3d8a8cb", "filename": "HeliosMobile_Game.ini"},
     {"uniqueFilename": "1c7eb1831955468f949854f706ed542c", "filename": "DefaultPartnerLimeGFSEngine.ini"},
     {"uniqueFilename": "3460cbe1c57d4a838ace32951a4d7171", "filename": "DefaultEngine.ini"},
-    {"uniqueFilename": "4949835338d4cc38d3f3cd3c81f75f4", "filename": "GFNMobile_Game.ini"},
+    {"uniqueFilename": "494983533c8d4cc38d3f3cd3c81f75f4", "filename": "GFNMobile_Game.ini"},
     {"uniqueFilename": "6ad739ad7483464eb6448710cba4cf1e", "filename": "SwitchSproutNativeEngine.ini"},
     {"uniqueFilename": "ea95a5ff1474476f8ce9f0c500dd040b", "filename": "DefaultLimeGFSEngine.ini"},
     {"uniqueFilename": "6eab62f6409e490b871e5c509503c579", "filename": "Android_RuntimeOptions.ini"},
@@ -131,7 +131,7 @@ ENDPOINTS    = [BASE_URL + e["uniqueFilename"] for e in FILENAME_ENTRIES]
 FILENAME_MAP = {e["uniqueFilename"]: e["filename"] for e in FILENAME_ENTRIES}
 
 DISCORD_TOKEN = os.getenv("DISCORD_BOT_TOKEN")
-CHANNEL_ID    = int(os.getenv("DISCORD_CHANNEL_ID", "1369279347415846932"))
+CHANNEL_ID    = int(os.getenv("DISCORD_CHANNEL_ID", "YOUR_CHANNEL_ID"))
 POLL_INTERVAL = int(os.getenv("POLL_INTERVAL", "60"))
 STATE_DIR     = "state"
 os.makedirs(STATE_DIR, exist_ok=True)
@@ -226,34 +226,24 @@ class FortniteTrackerBot(discord.Client):
             if f"{sign}DataTable=" not in l:
                 continue
 
-            # Strip the leading '+' or '-' and newline
             body = l.lstrip(f"{sign} ").rstrip()
 
-            # Try splitting off the “DataTable=” prefix
             try:
                 _, rest = body.split("=", 1)
             except ValueError:
-                # Malformed line, no '=' present
                 continue
 
-            # Now rest might be one of two formats:
-            # 1) path;action;row;field;value
-            # 2) path;AddRow;"{JSON...}"
-            # 3) path;TableUpdate;"[{JSON array}]"
             parts = rest.split(";", 4)
 
-            # Case 1: Exactly five pieces → (path, action, row, field, value)
             if len(parts) == 5:
                 path, action, row, field, value = parts
                 out.append((path, row, field, value, sign))
 
-            # Case 2 or 3: Exactly three pieces → (path, action, inner_json)
             elif len(parts) == 3:
                 path, action, inner = parts
-                # Handle AddRow as before
                 if action == "AddRow":
                     try:
-                        # Strip surrounding quotes if present
+
                         if inner.startswith('"') and inner.endswith('"'):
                             inner_content = inner[1:-1]
                         else:
@@ -266,7 +256,6 @@ class FortniteTrackerBot(discord.Client):
                         logging.warning(f"[parse_datatable] Failed to JSON‐decode AddRow content: {inner}")
                         continue
 
-                # Handle TableUpdate similarly
                 elif action == "TableUpdate":
                     try:
                         if inner.startswith('"') and inner.endswith('"'):
@@ -288,11 +277,9 @@ class FortniteTrackerBot(discord.Client):
                         continue
 
                 else:
-                    # If action isn't AddRow or TableUpdate, skip
                     continue
 
             else:
-                # Any other length is unexpected; skip
                 continue
 
         return out
@@ -318,10 +305,7 @@ class FortniteTrackerBot(discord.Client):
         return out
 
     async def send_embed_safe(self, channel, embed, file=None):
-        """
-        Upgraded from Code 1: logs on success, splits into “(part X/Y)”, logs each split part.
-        """
-        embed.colour = None
+
         try:
             await channel.send(embed=embed, file=file)
             logging.info("Message sent successfully")
@@ -329,10 +313,10 @@ class FortniteTrackerBot(discord.Client):
             msg = str(he).lower()
             if "embeds too large" in msg or "maximum number of embeds" in msg:
                 fields = embed.fields
-                # Break into chunks of 5 fields each
+
                 chunks = [fields[i : i + 5] for i in range(0, len(fields), 5)]
                 for idx, chunk in enumerate(chunks, 1):
-                    part = Embed(title=f"{embed.title} (part {idx}/{len(chunks)})", colour=None)
+                    part = Embed(title=f"{embed.title} (part {idx}/{len(chunks)})", color=discord.Color.blue())
                     for f in chunk:
                         part.add_field(name=f.name, value=f.value, inline=f.inline)
                     try:
@@ -355,14 +339,12 @@ class FortniteTrackerBot(discord.Client):
                 friendly_name = FILENAME_MAP.get(key, key)
                 state_file    = os.path.join(STATE_DIR, f"{friendly_name}.json")
 
-                # ——— FETCH RAW TEXT ———
                 try:
                     text = await self.fetch_json(url)
                 except Exception as e:
                     logging.info(f"[{friendly_name}] fetch error: {e} — skipping")
                     continue
 
-                # ——— DIFF LINES ———
                 new_lines = text.splitlines(keepends=True)
                 old_lines = []
                 if os.path.isfile(state_file):
@@ -378,23 +360,19 @@ class FortniteTrackerBot(discord.Client):
 
                 logging.info(f"Change found in {friendly_name} (+{len(added)}/-{len(removed)}) — processing")
 
-                # Overwrite state file for next iteration
                 with open(state_file, "w", encoding="utf-8") as f:
                     json.dump(new_lines, f, indent=2)
 
-                # ——— PARSE RAW DIFF ———
                 dt_plus       = self._parse_datatable(added, "+")
                 dt_minus      = self._parse_datatable(removed, "-")
                 ct_plus       = self._parse_curvetable(added, "+")
                 ct_minus      = self._parse_curvetable(removed, "-")
                 hotfixes_plus = self._parse_hotfix_strings(added)
 
-                # Prepare raw-diff file (always needed if no parsed mods)
                 diff_payload = {"added": added, "removed": removed}
                 diff_bytes   = json.dumps(diff_payload, indent=2).encode("utf-8")
                 diff_file    = File(fp=io.BytesIO(diff_bytes), filename=f"{friendly_name}_diff.json")
 
-                # ——— CALCULATE total_parsed = total modifications found ———
                 total_parsed = (
                     len(hotfixes_plus)
                     + len(dt_plus)
@@ -403,58 +381,71 @@ class FortniteTrackerBot(discord.Client):
                     + len(ct_minus)
                 )
 
-                # ——— EARLY ZERO-PARSED-MODS BRANCH ———
                 if total_parsed == 0:
-                    count_embed = Embed(title=f"Parsed Updates in {friendly_name}")
+                    count_embed = Embed(
+                        title=f"Parsed Updates in {friendly_name}",
+                        color=discord.Color.yellow()
+                    )
                     count_embed.add_field(name="Strings",     value="0", inline=True)
                     count_embed.add_field(name="DataTables",  value="0", inline=True)
                     count_embed.add_field(name="CurveTables", value="0", inline=True)
                     count_embed.add_field(name="Total Mods",  value="0", inline=False)
-                    count_embed.set_footer(text=f"See attached {friendly_name}_diff.json for details")
 
-                    # Send the “zero‐counts” embed + raw‐diff JSON, then skip to next file
                     await self.send_embed_safe(channel, count_embed, file=diff_file)
                     logging.info(f"No parsed mods; sent raw diff JSON with parsed‐style embed for {friendly_name}.")
                     continue
 
-                # ——— BUILD DETAIL EMBEDS (same batching style as Code 1) ———
                 embeds = []
 
-                # DataTable modifications
                 dt_changes = dt_plus + dt_minus
                 if dt_changes:
                     by_path = {}
                     for path, row, field, val, sign in dt_changes:
                         by_path.setdefault(path, []).append((row, field, val, sign))
                     for path, mods in by_path.items():
-                        e = Embed(title="Summary")
-                        e.description = f"➥ **DataTable Modification:** ```{path}```"
-                        for row, field, val, sign in mods:
-                            e.add_field(name=f"{row} → {field}", value=val, inline=False)
-                        embeds.append(e)
+                        total_mods = len(mods)
+                        num_parts = math.ceil(total_mods / 25)
+                        for part_index in range(num_parts):
+                            start = part_index * 25
+                            part_mods = mods[start : start + 25]
+                            title = "Summary"
+                            e = Embed(title=title, color=discord.Color.blue())
+                            e.description = f"➥ **DataTable Modification:** ```{path}```"
+                            for row, field, val, sign in part_mods:
+                                e.add_field(name=f"`{row} → {field}`", value=val, inline=False)
+                            embeds.append(e)
 
-                # CurveTable modifications
                 ct_changes = ct_plus + ct_minus
                 if ct_changes:
                     by_path = {}
                     for path, row, field, val, sign in ct_changes:
                         by_path.setdefault(path, []).append((row, field, val, sign))
                     for path, mods in by_path.items():
-                        e = Embed(title="Summary")
-                        e.description = f"```{path}```"
-                        for row, field, val, sign in mods:
-                            e.add_field(name=f"{row}.{field}", value=val, inline=False)
+                        total_mods = len(mods)
+                        num_parts = math.ceil(total_mods / 25)
+                        for part_index in range(num_parts):
+                            start = part_index * 25
+                            part_mods = mods[start : start + 25]
+                            title = "Summary"
+                            e = Embed(title=title, color=discord.Color.blue())
+                            e.description = f"```{path}```"
+                            for row, field, val, sign in part_mods:
+                                e.add_field(name=f"`{row}.{field}`", value=val, inline=False)
+                            embeds.append(e)
+
+                if hotfixes_plus:
+                    total_hotfixes = len(hotfixes_plus)
+                    num_parts = math.ceil(total_hotfixes / 25)
+                    for part_index in range(num_parts):
+                        start = part_index * 25
+                        part_hotfixes = hotfixes_plus[start : start + 25]
+                        title = "Summary"
+                        e = Embed(title=title, color=discord.Color.blue())
+                        e.description = "➥ **String modification detected**"
+                        for key, text in part_hotfixes:
+                            e.add_field(name=f"**{key}**", value=f"➥ {text}", inline=False)
                         embeds.append(e)
 
-                # Hotfix string modifications
-                if hotfixes_plus:
-                    e = Embed(title="Summary")
-                    e.description = "➥ **String modification detected**"
-                    for key, text in hotfixes_plus:
-                        e.add_field(name=f"**{key}**", value=f"➥ {text}", inline=False)
-                    embeds.append(e)
-
-                # ——— WRITE & SEND PARSED JSON + COUNT EMBED ———
                 section = {
                     "section_name": friendly_name,
                     "modifications": []
@@ -482,7 +473,10 @@ class FortniteTrackerBot(discord.Client):
                 with open(parsed_path, "w", encoding="utf-8") as f:
                     json.dump([section], f, indent=4, ensure_ascii=False)
 
-                count_embed = Embed(title=f"Parsed Updates in {friendly_name}")
+                count_embed = Embed(
+                    title=f"Parsed Updates in {friendly_name}",
+                    color=discord.Color.yellow()
+                )
                 count_embed.add_field(name="Strings",     value=str(len(hotfixes_plus)), inline=True)
                 count_embed.add_field(name="DataTables",  value=str(len(dt_plus)),         inline=True)
                 count_embed.add_field(name="CurveTables", value=str(len(ct_plus)),         inline=True)
@@ -494,18 +488,15 @@ class FortniteTrackerBot(discord.Client):
                     + len(ct_minus)
                 )
                 count_embed.add_field(name="Total Mods", value=str(total_mods), inline=False)
-                count_embed.set_footer(text=f"See attached {os.path.basename(parsed_path)} for details")
 
                 with open(parsed_path, "rb") as fp:
                     parsed_file = File(fp, filename=os.path.basename(parsed_path))
 
-                # ——— NEW: chunk the final embeds list into blocks of max 20 ———
                 all_embeds = embeds + [count_embed]
-                MAX_EMBEDS_PER_MESSAGE = 20
+                MAX_EMBEDS_PER_MESSAGE = 10
 
                 for i in range(0, len(all_embeds), MAX_EMBEDS_PER_MESSAGE):
                     chunk = all_embeds[i : i + MAX_EMBEDS_PER_MESSAGE]
-                    # Only attach parsed_file to the last chunk
                     if i + MAX_EMBEDS_PER_MESSAGE >= len(all_embeds):
                         await channel.send(embeds=chunk, file=parsed_file)
                     else:

@@ -1,0 +1,95 @@
+[
+    {
+        "section_name": "DefaultFigmentCoreGame.ini",
+        "modifications": [
+            {
+                "type": "DataTable",
+                "path": "/Figment_S01/DataTables/FigmentLootPackages",
+                "row_name": "WorldList.AthenaHighConsumables.13",
+                "field": "ItemDefinition",
+                "new_value": "/Game/Athena/Items/Consumables/Bush/Athena_Bush.Athena_Bush",
+                "change": "Added"
+            },
+            {
+                "type": "DataTable",
+                "path": "/Figment_S01/DataTables/FigmentLootPackages",
+                "row_name": "WorldList.AthenaSupplyDropConsumables.17",
+                "field": "ItemDefinition",
+                "new_value": "/Game/Athena/Items/Consumables/Bush/Athena_Bush.Athena_Bush",
+                "change": "Added"
+            },
+            {
+                "type": "DataTable",
+                "path": "/Figment_S01/DataTables/FigmentLootPackages",
+                "row_name": "WorldList.AthenaConsumables.13",
+                "field": "ItemDefinition",
+                "new_value": "/Game/Athena/Items/Consumables/Bush/Athena_Bush.Athena_Bush",
+                "change": "Added"
+            },
+            {
+                "type": "CurveTable",
+                "path": "/Figment_S01/DataTables/OverrideGameData_Figment",
+                "row_name": "Default.PurpleStuff",
+                "field": "TotalEffectiveHealthGain",
+                "new_value": "75.0",
+                "change": "Added"
+            },
+            {
+                "type": "CurveTable",
+                "path": "/Figment_S01/DataTables/OverrideGameData_Figment",
+                "row_name": "Default.PurpleStuff",
+                "field": "TotalEffectiveHealthGain",
+                "new_value": "75.0",
+                "change": "Added"
+            },
+            {
+                "type": "CurveTable",
+                "path": "/Figment_S01/DataTables/OverrideGameData_Figment",
+                "row_name": "Default.PurpleStuff",
+                "field": "TickRate",
+                "new_value": "0.5",
+                "change": "Added"
+            },
+            {
+                "type": "CurveTable",
+                "path": "/Figment_S01/DataTables/OverrideGameData_Figment",
+                "row_name": "Default.PurpleStuff",
+                "field": "TickRate",
+                "new_value": "0.5",
+                "change": "Added"
+            },
+            {
+                "type": "CurveTable",
+                "path": "/Figment_S01/DataTables/OverrideGameData_Figment",
+                "row_name": "Default.PurpleStuff",
+                "field": "MaxDuration",
+                "new_value": "37.6",
+                "change": "Added"
+            },
+            {
+                "type": "CurveTable",
+                "path": "/Figment_S01/DataTables/OverrideGameData_Figment",
+                "row_name": "Default.PurpleStuff",
+                "field": "MaxDuration",
+                "new_value": "37.6",
+                "change": "Added"
+            },
+            {
+                "type": "CurveTable",
+                "path": "/Figment_S01/DataTables/OverrideGameData_Figment",
+                "row_name": "Default.PurpleStuff",
+                "field": "IsEffectiveHealth",
+                "new_value": "1.0",
+                "change": "Added"
+            },
+            {
+                "type": "CurveTable",
+                "path": "/Figment_S01/DataTables/OverrideGameData_Figment",
+                "row_name": "Default.PurpleStuff",
+                "field": "IsEffectiveHealth",
+                "new_value": "1.0",
+                "change": "Added"
+            }
+        ]
+    }
+]

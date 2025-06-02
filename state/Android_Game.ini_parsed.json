@@ -1,0 +1,12 @@
+[
+    {
+        "section_name": "Android_Game.ini",
+        "modifications": [
+            {
+                "type": "String",
+                "key": "046FB0D9404A2A85986BBDA459D95ED3",
+                "value": "All V-Bucks purchased on the Epic Games Store are not redeemable or usable on Nintendo Switch™."
+            }
+        ]
+    }
+]
