@@ -25,6 +25,8 @@ CLIENT_SECRET  = os.getenv("EPIC_CLIENT_SECRET")
 TOKEN_URL      = "https://account-public-service-prod.ol.epicgames.com/account/api/oauth/token"
 
 FILENAME_ENTRIES = [
+    {"uniqueFilename": "1d2228689c594fd0b31a9d18557e6715", "filename": "Switch2_Game.ini"},
+    {"uniqueFilename": "3391a26843124750be0b74328b59bf62", "filename": "Switch2_DelMarGameEngine.ini"},
     {"uniqueFilename": "5b512d02374d4cf788a45db70830aced", "filename": "AndroidDelMarGameEngine.ini"},
     {"uniqueFilename": "69f6b4b9a8d44714823e88a4168fa05c", "filename": "DefaultSproutNativeEngine.ini"},
     {"uniqueFilename": "8ac9796933b34490877cf379b1b56340", "filename": "IOSDelMarGameEngine.ini"},
