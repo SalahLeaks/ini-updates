@@ -1,0 +1,8 @@
+[
+  "[ConsoleVariables]\n",
+  "CMS.MaxImageWidth=1920\n",
+  "http.CurlEventLoopEnableChance=100\n",
+  "http.MaxConcurrentRequests=4\n",
+  "[/Script/SwitchRuntimeSettings.SwitchRuntimeSettings]\n",
+  "bDisablePresenceUpdates=true\n"
+]

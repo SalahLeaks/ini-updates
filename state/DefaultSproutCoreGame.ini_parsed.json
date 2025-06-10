@@ -1,0 +1,153 @@
+[
+    {
+        "section_name": "DefaultSproutCoreGame.ini",
+        "modifications": [
+            {
+                "type": "String",
+                "key": "9D46E1814A2AA1AF8C950A8111FF98BF",
+                "value": "Brick Bay Gazette Special Edition"
+            },
+            {
+                "type": "String",
+                "key": "FF21627141685039F510F685ACF3AF6B",
+                "value": "Agent Peely informed us of an escape by the thief, Rotten Peely, that wreaked havoc in Brick Bay! Some Residents reported wiped out inventory, Creds, and even entire homes! However, rest assured that order has been restored.\\r\\n\\r\\nThe Brick Bay Municipal Department (in partnership with a generous donation from Midas), is <emphasis>gifting Creds to all Residents</> for the inconvenience. "
+            },
+            {
+                "type": "DataTable",
+                "path": "/SproutTG_Villa_Bldg/DataTables/DT_Sprout_PlayerHousing_Villa_Bldg",
+                "row_name": "HSID_Villa_Lrg_01",
+                "field": "bEnabledForSale",
+                "new_value": "False",
+                "change": "Added"
+            },
+            {
+                "type": "DataTable",
+                "path": "/SproutJobs_Base/DataRegistries/DT_SproutBaseCTARewards",
+                "row_name": "ATM",
+                "field": "LootBundleTags",
+                "new_value": "(GameplayTags=)",
+                "change": "Added"
+            },
+            {
+                "type": "DataTable",
+                "path": "/SproutJobs_Base/DataRegistries/DT_SproutBaseCTARewards",
+                "row_name": "CashPile",
+                "field": "LootBundleTags",
+                "new_value": "(GameplayTags=)",
+                "change": "Added"
+            },
+            {
+                "type": "DataTable",
+                "path": "/SproutTG_Villa_Bldg/DataTables/DT_Sprout_PlayerHousing_Villa_Bldg",
+                "row_name": "HSID_Villa_Lrg_01",
+                "field": "bEnabledForSale",
+                "new_value": "False",
+                "change": "Added"
+            },
+            {
+                "type": "DataTable",
+                "path": "/SproutJobs_Base/DataRegistries/DT_SproutBaseCTARewards",
+                "row_name": "ATM",
+                "field": "LootBundleTags",
+                "new_value": "(GameplayTags=)",
+                "change": "Added"
+            },
+            {
+                "type": "DataTable",
+                "path": "/SproutJobs_Base/DataRegistries/DT_SproutBaseCTARewards",
+                "row_name": "CashPile",
+                "field": "LootBundleTags",
+                "new_value": "(GameplayTags=)",
+                "change": "Added"
+            },
+            {
+                "type": "DataTable",
+                "path": "/SproutAI/AI/Datatables/SproutNPCReactionsTable_HighPriority",
+                "row_name": "HitByCar",
+                "field": "ConditionalQuery",
+                "new_value": "(TokenStreamVersion=0,TagDictionary=((TagName=\"Sprout.Conversation.Requirement.Trait.Riotfly\")),QueryTokenStream=(0,1,3,1,0),UserDescription=\"\",AutoDescription=\" NONE( Sprout.Conversation.Requirement.Trait.Riotfly )\")",
+                "change": "Added"
+            },
+            {
+                "type": "DataTable",
+                "path": "/SproutAI/AI/Datatables/SproutNPCReactionsTable_HighPriority",
+                "row_name": "GotFertilized",
+                "field": "ConditionalQuery",
+                "new_value": "(TokenStreamVersion=0,TagDictionary=((TagName=\"Sprout.Conversation.Requirement.Trait.Riotfly\")),QueryTokenStream=(0,1,3,1,0),UserDescription=\"\",AutoDescription=\" NONE( Sprout.Conversation.Requirement.Trait.Riotfly )\")",
+                "change": "Added"
+            },
+            {
+                "type": "DataTable",
+                "path": "/SproutAI/AI/Datatables/SproutNPCReactionsTable_HighPriority",
+                "row_name": "Gift_Neutral",
+                "field": "ConditionalQuery",
+                "new_value": "(TokenStreamVersion=0,TagDictionary=((TagName=\"Sprout.Conversation.Requirement.Trait.Riotfly\")),QueryTokenStream=(0,1,3,1,0),UserDescription=\"\",AutoDescription=\" NONE( Sprout.Conversation.Requirement.Trait.Riotfly )\")",
+                "change": "Added"
+            },
+            {
+                "type": "DataTable",
+                "path": "/SproutAI/AI/Datatables/SproutNPCReactionsTable_HighPriority",
+                "row_name": "Gift_Liked",
+                "field": "ConditionalQuery",
+                "new_value": "(TokenStreamVersion=0,TagDictionary=((TagName=\"Sprout.Conversation.Requirement.Trait.Riotfly\")),QueryTokenStream=(0,1,3,1,0),UserDescription=\"\",AutoDescription=\" NONE( Sprout.Conversation.Requirement.Trait.Riotfly )\")",
+                "change": "Added"
+            },
+            {
+                "type": "DataTable",
+                "path": "/SproutAI/AI/Datatables/SproutNPCReactionsTable_HighPriority",
+                "row_name": "Gift_Disliked",
+                "field": "ConditionalQuery",
+                "new_value": "(TokenStreamVersion=0,TagDictionary=((TagName=\"Sprout.Conversation.Requirement.Trait.Riotfly\")),QueryTokenStream=(0,1,3,1,0),UserDescription=\"\",AutoDescription=\" NONE( Sprout.Conversation.Requirement.Trait.Riotfly )\")",
+                "change": "Added"
+            },
+            {
+                "type": "DataTable",
+                "path": "/SproutAI/AI/Datatables/SproutNPCReactionsTable_HighPriority",
+                "row_name": "PlayerAction_liked",
+                "field": "ConditionalQuery",
+                "new_value": "(TokenStreamVersion=0,TagDictionary=((TagName=\"Sprout.Conversation.Requirement.Trait.Riotfly\")),QueryTokenStream=(0,1,3,1,0),UserDescription=\"\",AutoDescription=\" NONE( Sprout.Conversation.Requirement.Trait.Riotfly )\")",
+                "change": "Added"
+            },
+            {
+                "type": "DataTable",
+                "path": "/SproutAI/AI/Datatables/SproutNPCReactionsTable_HighPriority",
+                "row_name": "PlayerAction_Disliked",
+                "field": "ConditionalQuery",
+                "new_value": "(TokenStreamVersion=0,TagDictionary=((TagName=\"Sprout.Conversation.Requirement.Trait.Riotfly\")),QueryTokenStream=(0,1,3,1,0),UserDescription=\"\",AutoDescription=\" NONE( Sprout.Conversation.Requirement.Trait.Riotfly )\")",
+                "change": "Added"
+            },
+            {
+                "type": "DataTable",
+                "path": "/SproutTG_RiotFly_Prop/DT_Sprout_RiotFly_ShoppingApp",
+                "row_name": "SBID_OSRT_Display_Floor_M_Blade_01_A",
+                "field": "bEnabled",
+                "new_value": "True",
+                "change": "Added"
+            },
+            {
+                "type": "CurveTable",
+                "path": "/SproutItems_Currency/DataTables/SproutItems_CurrencyGameData",
+                "row_name": "Default.Currency",
+                "field": "Limit",
+                "new_value": "300000.0",
+                "change": "Added"
+            },
+            {
+                "type": "CurveTable",
+                "path": "/SproutItems_Currency/DataTables/SproutItems_CurrencyGameData",
+                "row_name": "Default.Currency",
+                "field": "Limit",
+                "new_value": "300000.0",
+                "change": "Added"
+            },
+            {
+                "type": "CurveTable",
+                "path": "/SproutItems_Currency/DataTables/SproutItems_CurrencyGameData",
+                "row_name": "Default.Currency",
+                "field": "Limit",
+                "new_value": "300000.0",
+                "change": "Added"
+            }
+        ]
+    }
+]

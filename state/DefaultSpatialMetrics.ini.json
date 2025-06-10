@@ -1,0 +1,4 @@
+[
+  "[/Script/SpatialMetricsCore.SpatialMetricsSubsystem]\n",
+  "+AllowedMetricClasses=Class'/Script/SpatialMetrics.SpatialMetricsSceneGraphEntityCount'\n"
+]

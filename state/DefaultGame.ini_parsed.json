@@ -1,0 +1,1588 @@
+[
+    {
+        "section_name": "DefaultGame.ini",
+        "modifications": [
+            {
+                "type": "String",
+                "key": "SettingName",
+                "value": "AI Features"
+            },
+            {
+                "type": "String",
+                "key": "DetailName",
+                "value": "Allow voice and written communication with AI Features"
+            },
+            {
+                "type": "String",
+                "key": "430A424242296BA9FADEF2A89BB9DB06",
+                "value": "Earn 5,000 XP by participating in jams in Dance With Sabrina"
+            },
+            {
+                "type": "String",
+                "key": "50601CC84A5CC25F42F22EBC8AF3F143",
+                "value": "Earn 5,000 XP by participating in jams in Dance With Sabrina"
+            },
+            {
+                "type": "String",
+                "key": "9FE9B9D34C81F098D53FF28035F0AB1C",
+                "value": "Earn 5,000 XP by participating in jams in Dance With Sabrina"
+            },
+            {
+                "type": "String",
+                "key": "E28E49D541E2EFD7381824A0C3CF1EF7",
+                "value": "Earn 10,000 XP by participating in jams in Dance With Sabrina"
+            },
+            {
+                "type": "String",
+                "key": "BB9C91D64BBE0E724A1BD99E7343F344",
+                "value": "Earn 10,000 XP by participating in jams in Dance With Sabrina"
+            },
+            {
+                "type": "String",
+                "key": "9937B1F44B47388D307B3CA256C6119D",
+                "value": "Earn 10,000 XP by participating in jams in Dance With Sabrina"
+            },
+            {
+                "type": "String",
+                "key": "287ECC7B470D3A7792011E80567E0943",
+                "value": "Earn 15,000 XP by participating in jams in Dance With Sabrina"
+            },
+            {
+                "type": "String",
+                "key": "F3004E034C24E4BFBCD7F88654A76BCD",
+                "value": "Earn 15,000 XP by participating in jams in Dance With Sabrina"
+            },
+            {
+                "type": "String",
+                "key": "57D046094E0889DF390C6282AC947C2D",
+                "value": "Earn 15,000 XP by participating in jams in Dance With Sabrina"
+            },
+            {
+                "type": "String",
+                "key": "D4AD9270F4C7FB20EF42F856040E318B",
+                "value": "Eliminator's Knife"
+            },
+            {
+                "type": "String",
+                "key": "F3AA7803AB1CED5F86D4223394CC15DA",
+                "value": "Varsity Storm's Maw"
+            },
+            {
+                "type": "String",
+                "key": "8C0E9A79127FD388EAD435DA7D5FA54C",
+                "value": "Golden O.M.E.G.A. Spear"
+            },
+            {
+                "type": "String",
+                "key": "23BA137D5218DF404364DC245C83152B",
+                "value": "Dark Paint Pummelers"
+            },
+            {
+                "type": "String",
+                "key": "268624B3519920DEF45F5C8584DBB38C",
+                "value": "Midnight Homegrown Flail"
+            },
+            {
+                "type": "String",
+                "key": "71DA9FFC4F6F29B5751A90C5A502E540",
+                "value": "Firebird Claws"
+            },
+            {
+                "type": "String",
+                "key": "64D3F749EDF496A995324CD32B24C32D",
+                "value": "Upbeat Slashers"
+            },
+            {
+                "type": "String",
+                "key": "6A628FACE761662A7F23D9BB40F49A17",
+                "value": "Dark Rezz-Arc"
+            },
+            {
+                "type": "String",
+                "key": "FD859000C6DB0CC41D50581348563111",
+                "value": "Stealth Voltaic Vice"
+            },
+            {
+                "type": "String",
+                "key": "20E0219501E460CEE9B715A4B3AB3D67",
+                "value": "Varsity Cheer Bolt"
+            },
+            {
+                "type": "String",
+                "key": "641D44D71F069D443E1B75AA35AEBD39",
+                "value": "Golden O.M.E.G.A. Aerial"
+            },
+            {
+                "type": "String",
+                "key": "622D3C65C365F2D53DF0E8415BA9AF59",
+                "value": "Dark Masterpiece Bubble"
+            },
+            {
+                "type": "String",
+                "key": "EC5F306891D8ECCB92E56F70392552FF",
+                "value": "Wings of the Firebird"
+            },
+            {
+                "type": "String",
+                "key": "294F2F5CE047E87A10BB45F446C75D89",
+                "value": "Upbeat Flyer"
+            },
+            {
+                "type": "String",
+                "key": "E8300739E9EEDE4A63D5E51A51FB835E",
+                "value": "Dark Rezzboard"
+            },
+            {
+                "type": "String",
+                "key": "EEBCCAABA7DF5A0ED33907192983EE29",
+                "value": "Classic Colors"
+            },
+            {
+                "type": "String",
+                "key": "355DE07719016E01D421FB12B38088ED",
+                "value": "Stealth Seven Glider"
+            },
+            {
+                "type": "String",
+                "key": "4B7761FB42FC6F8E03D59F8B4C1BE676",
+                "value": "Super"
+            },
+            {
+                "type": "String",
+                "key": "4660E4AB44EA43CDAC055A99170CBFC7",
+                "value": "AI NPC Interaction"
+            },
+            {
+                "type": "String",
+                "key": "78C7519949FFC6CD2789F28099841D38",
+                "value": "Thanks for submitting your bug report on AI NPC Interaction."
+            },
+            {
+                "type": "String",
+                "key": "CAF746EC4C12862D3930F88B2D911578",
+                "value": "You are about to submit a bug for: AI NPC Interaction. A log of recent AI-generated interactions you have experienced will be provided to Epic Games for review."
+            },
+            {
+                "type": "String",
+                "key": "3D1F501141108B190963C9ABDD3FDB29",
+                "value": "ALERT! Slurp Leviathan has escaped Brick Bay’s super-secret agency, The Bureau! We’ve hired Noir to hit the streets and look for clues….\\n\\n<b>Slurp Leviathan and Noir’s commentary is powered by AI. You can report bugs with it by collapsing your Team Members list in the sidebar menu in-game, and going to reporting, then report a bug.</> "
+            },
+            {
+                "type": "String",
+                "key": "9FDA8B084A837051C93C26AE296F12E3",
+                "value": "Mute {AIName}"
+            },
+            {
+                "type": "String",
+                "key": "AEF7AA6B4BB4320201712B93775B297A",
+                "value": "Unmute {AIName}"
+            },
+            {
+                "type": "String",
+                "key": "ACBFB7884D99D21C65556B9BB782F83D",
+                "value": "Superman"
+            },
+            {
+                "type": "String",
+                "key": "15B97D1D41B4C796B4B2CE8BCB3675E0",
+                "value": "Megastar Bundle"
+            },
+            {
+                "type": "String",
+                "key": "0592AAAF4212FF35AB74CE9335005AFD",
+                "value": "Buy a bundle of 25 Rewards at a reduced price of 1,800 V-Bucks (normally 3,750 if purchased individually) and unlock Superman early"
+            },
+            {
+                "type": "String",
+                "key": "70513959481A4AF6788374904B8A6AB6",
+                "value": "25 Battle Pass Rewards + unlock Superman early"
+            },
+            {
+                "type": "String",
+                "key": "801B60434588EEDABCF02DB9D877B03D",
+                "value": "Buy Superman Battle Bundle"
+            },
+            {
+                "type": "String",
+                "key": "1DA7813242BE65126A5AA69B28414D6A",
+                "value": " Bundle + Instantly Unlock Superman"
+            },
+            {
+                "type": "DataTable",
+                "path": "/Game/Items/Datatables/AthenaLootPackages_Client",
+                "row_name": "WorldList.AthenaAmmoLarge.03",
+                "field": "CountRange",
+                "new_value": "(X=18,Y=18)",
+                "change": "Added"
+            },
+            {
+                "type": "DataTable",
+                "path": "/Game/Items/Datatables/AthenaLootPackages_Client",
+                "row_name": "WorldList.AthenaAmmoLarge.04",
+                "field": "CountRange",
+                "new_value": "(X=24,Y=24)",
+                "change": "Added"
+            },
+            {
+                "type": "DataTable",
+                "path": "/Game/Items/Datatables/AthenaLootPackages_Client",
+                "row_name": "WorldList.AthenaAmmoLarge.05",
+                "field": "CountRange",
+                "new_value": "(X=30,Y=30)",
+                "change": "Added"
+            },
+            {
+                "type": "DataTable",
+                "path": "/Game/Items/Datatables/AthenaLootPackages_Client",
+                "row_name": "WorldList.AthenaAmmoSmall.03",
+                "field": "Weight",
+                "new_value": "1.500000",
+                "change": "Added"
+            },
+            {
+                "type": "DataTable",
+                "path": "/Game/Items/Datatables/AthenaLootPackages_Client",
+                "row_name": "WorldList.AthenaAmmoSmall.03",
+                "field": "CountRange",
+                "new_value": "(X=16,Y=16)",
+                "change": "Added"
+            },
+            {
+                "type": "DataTable",
+                "path": "/Game/Items/Datatables/AthenaLootPackages_Client",
+                "row_name": "WorldList.AthenaLoot.Ammo.Medium.01",
+                "field": "CountRange",
+                "new_value": "(X=18,Y=18)",
+                "change": "Added"
+            },
+            {
+                "type": "DataTable",
+                "path": "/Game/Items/Datatables/AthenaLootPackages_Client",
+                "row_name": "WorldList.AthenaLoot.Ammo.Medium.02",
+                "field": "CountRange",
+                "new_value": "(X=24,Y=24)",
+                "change": "Added"
+            },
+            {
+                "type": "DataTable",
+                "path": "/Game/Items/Datatables/AthenaLootPackages_Client",
+                "row_name": "WorldList.AthenaLoot.Ammo.Medium.03",
+                "field": "CountRange",
+                "new_value": "(X=30,Y=30)",
+                "change": "Added"
+            },
+            {
+                "type": "DataTable",
+                "path": "/Game/Items/Datatables/AthenaLootPackages_Client",
+                "row_name": "WorldList.AthenaLoot.Ammo.MediumRevolver.01",
+                "field": "CountRange",
+                "new_value": "(X=16,Y=16)",
+                "change": "Added"
+            },
+            {
+                "type": "DataTable",
+                "path": "/Figment_LootTables/DataTables/FigmentLootPackages",
+                "row_name": "WorldList.AthenaTraps.09",
+                "field": "Weight",
+                "new_value": "0.000000",
+                "change": "Added"
+            },
+            {
+                "type": "DataTable",
+                "path": "/Figment_LootTables/DataTables/FigmentLootPackages",
+                "row_name": "WorldList.AthenaSupplyDropTraps.09",
+                "field": "Weight",
+                "new_value": "0.000000",
+                "change": "Added"
+            },
+            {
+                "type": "DataTable",
+                "path": "/Figment_LootTables/DataTables/FigmentLootPackages",
+                "row_name": "WorldList.AthenaLoot.VendingMachine.Consumables.Rare.03",
+                "field": "Weight",
+                "new_value": "0.000000",
+                "change": "Added"
+            },
+            {
+                "type": "DataTable",
+                "path": "/Figment_LootTables/DataTables/FigmentLootPackages",
+                "row_name": "WorldList.AthenaLoot.Weapon.AssaultAuto.20",
+                "field": "Weight",
+                "new_value": "0.000000",
+                "change": "Added"
+            },
+            {
+                "type": "DataTable",
+                "path": "/Figment_LootTables/DataTables/FigmentLootPackages",
+                "row_name": "WorldList.AthenaLoot.Weapon.AssaultAuto.21",
+                "field": "Weight",
+                "new_value": "0.000000",
+                "change": "Added"
+            },
+            {
+                "type": "DataTable",
+                "path": "/Figment_LootTables/DataTables/FigmentLootPackages",
+                "row_name": "WorldList.AthenaLoot.Weapon.HighAssaultAuto.21",
+                "field": "Weight",
+                "new_value": "0.000000",
+                "change": "Added"
+            },
+            {
+                "type": "DataTable",
+                "path": "/Figment_LootTables/DataTables/FigmentLootPackages",
+                "row_name": "WorldList.AthenaLoot.VendingMachine.Weapons.Uncommon.Medium.02",
+                "field": "Weight",
+                "new_value": "0.000000",
+                "change": "Added"
+            },
+            {
+                "type": "DataTable",
+                "path": "/Figment_LootTables/DataTables/FigmentLootPackages",
+                "row_name": "WorldList.AthenaLoot.VendingMachine.Weapons.Rare.Medium.01",
+                "field": "Weight",
+                "new_value": "0.000000",
+                "change": "Added"
+            },
+            {
+                "type": "DataTable",
+                "path": "/Figment_LootTables/DataTables/FigmentLootPackages",
+                "row_name": "WorldList.AthenaHighConsumables.15",
+                "field": "Weight",
+                "new_value": "0.000000",
+                "change": "Added"
+            },
+            {
+                "type": "DataTable",
+                "path": "/Figment_LootTables/DataTables/FigmentLootPackages",
+                "row_name": "WorldList.AthenaSupplyDropConsumables.27",
+                "field": "Weight",
+                "new_value": "0.000000",
+                "change": "Added"
+            },
+            {
+                "type": "DataTable",
+                "path": "/Figment_LootTables/DataTables/FigmentLootPackages",
+                "row_name": "WorldList.AthenaConsumables.15",
+                "field": "Weight",
+                "new_value": "0.000000",
+                "change": "Added"
+            },
+            {
+                "type": "DataTable",
+                "path": "/Figment_LootTables/DataTables/FigmentLootPackages",
+                "row_name": "WorldList.AthenaLoot.VendingMachine.Consumables.Epic.02",
+                "field": "Weight",
+                "new_value": "0.000000",
+                "change": "Added"
+            },
+            {
+                "type": "DataTable",
+                "path": "/Figment_LootTables/DataTables/FigmentLootPackages",
+                "row_name": "WorldList.AthenaLoot.Weapon.Handgun.04",
+                "field": "Weight",
+                "new_value": "0.000000",
+                "change": "Added"
+            },
+            {
+                "type": "DataTable",
+                "path": "/Figment_LootTables/DataTables/FigmentLootPackages",
+                "row_name": "WorldList.AthenaLoot.Weapon.Handgun.05",
+                "field": "Weight",
+                "new_value": "0.000000",
+                "change": "Added"
+            },
+            {
+                "type": "DataTable",
+                "path": "/Figment_LootTables/DataTables/FigmentLootPackages",
+                "row_name": "WorldList.AthenaLoot.Weapon.HighHandgun.16",
+                "field": "Weight",
+                "new_value": "0.000000",
+                "change": "Added"
+            },
+            {
+                "type": "DataTable",
+                "path": "/Figment_LootTables/DataTables/FigmentLootPackages",
+                "row_name": "WorldList.AthenaLoot.Weapon.HighHandgun.17",
+                "field": "Weight",
+                "new_value": "0.000000",
+                "change": "Added"
+            },
+            {
+                "type": "DataTable",
+                "path": "/Figment_LootTables/DataTables/FigmentLootPackages",
+                "row_name": "WorldList.AthenaSupplyDrop.Weapon.Handgun.01",
+                "field": "Weight",
+                "new_value": "0.000000",
+                "change": "Added"
+            },
+            {
+                "type": "DataTable",
+                "path": "/Figment_LootTables/DataTables/FigmentLootPackages",
+                "row_name": "WorldList.AthenaSupplyDrop.Weapon.Handgun.02",
+                "field": "Weight",
+                "new_value": "0.000000",
+                "change": "Added"
+            },
+            {
+                "type": "DataTable",
+                "path": "/Figment_LootTables/DataTables/FigmentLootPackages",
+                "row_name": "WorldList.AthenaLoot.VendingMachine.Weapons.Epic.Medium.03",
+                "field": "Weight",
+                "new_value": "0.000000",
+                "change": "Added"
+            },
+            {
+                "type": "DataTable",
+                "path": "/Figment_LootTables/DataTables/FigmentLootPackages",
+                "row_name": "WorldList.AthenaLoot.VendingMachine.Weapons.Legendary.Medium.04",
+                "field": "Weight",
+                "new_value": "0.000000",
+                "change": "Added"
+            },
+            {
+                "type": "DataTable",
+                "path": "/Figment_LootTables/DataTables/FigmentLootPackages",
+                "row_name": "WorldList.AthenaHighConsumables.44",
+                "field": "Weight",
+                "new_value": "0.000000",
+                "change": "Added"
+            },
+            {
+                "type": "DataTable",
+                "path": "/Figment_LootTables/DataTables/FigmentLootPackages",
+                "row_name": "WorldList.AthenaSupplyDropConsumables.05",
+                "field": "Weight",
+                "new_value": "0.000000",
+                "change": "Added"
+            },
+            {
+                "type": "DataTable",
+                "path": "/Figment_LootTables/DataTables/FigmentLootPackages",
+                "row_name": "WorldList.AthenaLoot.VendingMachine.Consumables.Legendary.01",
+                "field": "Weight",
+                "new_value": "0.000000",
+                "change": "Added"
+            },
+            {
+                "type": "DataTable",
+                "path": "/Game/Athena/Items/Weapons/AthenaRangedWeapons",
+                "row_name": "Shotgun_FirePetal_Auto_Athena_UR_Ore_T03",
+                "field": "ReloadTime",
+                "new_value": "3.65",
+                "change": "Added"
+            },
+            {
+                "type": "DataTable",
+                "path": "/PlaytimeRewards/DataTables/PlaytimeRewardsTable",
+                "row_name": "SparksMain",
+                "field": "ProductTag",
+                "new_value": "(TagName=\"Product.Sparks.PilgrimQuickplay\")",
+                "change": "Added"
+            },
+            {
+                "type": "DataTable",
+                "path": "/Game/Athena/Items/Weapons/AthenaRangedWeapons",
+                "row_name": "Pistol_Cherrysmoke_Athena_C_Ore_T03",
+                "field": "DmgPB",
+                "new_value": "16.000000",
+                "change": "Added"
+            },
+            {
+                "type": "DataTable",
+                "path": "/Game/Athena/Items/Weapons/AthenaRangedWeapons",
+                "row_name": "Pistol_Cherrysmoke_Athena_C_Ore_T03",
+                "field": "DmgMid",
+                "new_value": "13.600000",
+                "change": "Added"
+            },
+            {
+                "type": "DataTable",
+                "path": "/Game/Athena/Items/Weapons/AthenaRangedWeapons",
+                "row_name": "Pistol_Cherrysmoke_Athena_C_Ore_T03",
+                "field": "DmgLong",
+                "new_value": "12.800000",
+                "change": "Added"
+            },
+            {
+                "type": "DataTable",
+                "path": "/Game/Athena/Items/Weapons/AthenaRangedWeapons",
+                "row_name": "Pistol_Cherrysmoke_Athena_C_Ore_T03",
+                "field": "DmgMaxRange",
+                "new_value": "12.000000",
+                "change": "Added"
+            },
+            {
+                "type": "DataTable",
+                "path": "/Game/Athena/Items/Weapons/AthenaRangedWeapons",
+                "row_name": "Pistol_Cherrysmoke_Athena_C_Ore_T03",
+                "field": "EnvDmgPB",
+                "new_value": "11.000000",
+                "change": "Added"
+            },
+            {
+                "type": "DataTable",
+                "path": "/Game/Athena/Items/Weapons/AthenaRangedWeapons",
+                "row_name": "Pistol_Cherrysmoke_Athena_C_Ore_T03",
+                "field": "EnvDmgMid",
+                "new_value": "11.000000",
+                "change": "Added"
+            },
+            {
+                "type": "DataTable",
+                "path": "/Game/Athena/Items/Weapons/AthenaRangedWeapons",
+                "row_name": "Pistol_Cherrysmoke_Athena_C_Ore_T03",
+                "field": "EnvDmgLong",
+                "new_value": "11.000000",
+                "change": "Added"
+            },
+            {
+                "type": "DataTable",
+                "path": "/Game/Athena/Items/Weapons/AthenaRangedWeapons",
+                "row_name": "Pistol_Cherrysmoke_Athena_C_Ore_T03",
+                "field": "EnvDmgMaxRange",
+                "new_value": "11.000000",
+                "change": "Added"
+            },
+            {
+                "type": "DataTable",
+                "path": "/Game/Athena/Items/Weapons/AthenaRangedWeapons",
+                "row_name": "Pistol_Cherrysmoke_Athena_UC_Ore_T03",
+                "field": "DmgPB",
+                "new_value": "17.000000",
+                "change": "Added"
+            },
+            {
+                "type": "DataTable",
+                "path": "/Game/Athena/Items/Weapons/AthenaRangedWeapons",
+                "row_name": "Pistol_Cherrysmoke_Athena_UC_Ore_T03",
+                "field": "DmgMid",
+                "new_value": "14.450000",
+                "change": "Added"
+            },
+            {
+                "type": "DataTable",
+                "path": "/Game/Athena/Items/Weapons/AthenaRangedWeapons",
+                "row_name": "Pistol_Cherrysmoke_Athena_UC_Ore_T03",
+                "field": "DmgLong",
+                "new_value": "13.600000",
+                "change": "Added"
+            },
+            {
+                "type": "DataTable",
+                "path": "/Game/Athena/Items/Weapons/AthenaRangedWeapons",
+                "row_name": "Pistol_Cherrysmoke_Athena_UC_Ore_T03",
+                "field": "DmgMaxRange",
+                "new_value": "12.750000",
+                "change": "Added"
+            },
+            {
+                "type": "DataTable",
+                "path": "/Game/Athena/Items/Weapons/AthenaRangedWeapons",
+                "row_name": "Pistol_Cherrysmoke_Athena_UC_Ore_T03",
+                "field": "EnvDmgPB",
+                "new_value": "11.000000",
+                "change": "Added"
+            },
+            {
+                "type": "DataTable",
+                "path": "/Game/Athena/Items/Weapons/AthenaRangedWeapons",
+                "row_name": "Pistol_Cherrysmoke_Athena_UC_Ore_T03",
+                "field": "EnvDmgMid",
+                "new_value": "11.000000",
+                "change": "Added"
+            },
+            {
+                "type": "DataTable",
+                "path": "/Game/Athena/Items/Weapons/AthenaRangedWeapons",
+                "row_name": "Pistol_Cherrysmoke_Athena_UC_Ore_T03",
+                "field": "EnvDmgLong",
+                "new_value": "11.000000",
+                "change": "Added"
+            },
+            {
+                "type": "DataTable",
+                "path": "/Game/Athena/Items/Weapons/AthenaRangedWeapons",
+                "row_name": "Pistol_Cherrysmoke_Athena_UC_Ore_T03",
+                "field": "EnvDmgMaxRange",
+                "new_value": "11.000000",
+                "change": "Added"
+            },
+            {
+                "type": "DataTable",
+                "path": "/Game/Athena/Items/Weapons/AthenaRangedWeapons",
+                "row_name": "Pistol_Cherrysmoke_Athena_R_Ore_T03",
+                "field": "DmgPB",
+                "new_value": "18.000000",
+                "change": "Added"
+            },
+            {
+                "type": "DataTable",
+                "path": "/Game/Athena/Items/Weapons/AthenaRangedWeapons",
+                "row_name": "Pistol_Cherrysmoke_Athena_R_Ore_T03",
+                "field": "DmgMid",
+                "new_value": "15.300000",
+                "change": "Added"
+            },
+            {
+                "type": "DataTable",
+                "path": "/Game/Athena/Items/Weapons/AthenaRangedWeapons",
+                "row_name": "Pistol_Cherrysmoke_Athena_R_Ore_T03",
+                "field": "DmgLong",
+                "new_value": "14.400000",
+                "change": "Added"
+            },
+            {
+                "type": "DataTable",
+                "path": "/Game/Athena/Items/Weapons/AthenaRangedWeapons",
+                "row_name": "Pistol_Cherrysmoke_Athena_R_Ore_T03",
+                "field": "DmgMaxRange",
+                "new_value": "13.500000",
+                "change": "Added"
+            },
+            {
+                "type": "DataTable",
+                "path": "/Game/Athena/Items/Weapons/AthenaRangedWeapons",
+                "row_name": "Pistol_Cherrysmoke_Athena_R_Ore_T03",
+                "field": "EnvDmgPB",
+                "new_value": "12.000000",
+                "change": "Added"
+            },
+            {
+                "type": "DataTable",
+                "path": "/Game/Athena/Items/Weapons/AthenaRangedWeapons",
+                "row_name": "Pistol_Cherrysmoke_Athena_R_Ore_T03",
+                "field": "EnvDmgMid",
+                "new_value": "12.000000",
+                "change": "Added"
+            },
+            {
+                "type": "DataTable",
+                "path": "/Game/Athena/Items/Weapons/AthenaRangedWeapons",
+                "row_name": "Pistol_Cherrysmoke_Athena_R_Ore_T03",
+                "field": "EnvDmgLong",
+                "new_value": "12.000000",
+                "change": "Added"
+            },
+            {
+                "type": "DataTable",
+                "path": "/Game/Athena/Items/Weapons/AthenaRangedWeapons",
+                "row_name": "Pistol_Cherrysmoke_Athena_R_Ore_T03",
+                "field": "EnvDmgMaxRange",
+                "new_value": "12.000000",
+                "change": "Added"
+            },
+            {
+                "type": "DataTable",
+                "path": "/Game/Athena/Items/Weapons/AthenaRangedWeapons",
+                "row_name": "Pistol_Cherrysmoke_Athena_VR_Ore_T03",
+                "field": "DmgPB",
+                "new_value": "19.000000",
+                "change": "Added"
+            },
+            {
+                "type": "DataTable",
+                "path": "/Game/Athena/Items/Weapons/AthenaRangedWeapons",
+                "row_name": "Pistol_Cherrysmoke_Athena_VR_Ore_T03",
+                "field": "DmgMid",
+                "new_value": "16.150000",
+                "change": "Added"
+            },
+            {
+                "type": "DataTable",
+                "path": "/Game/Athena/Items/Weapons/AthenaRangedWeapons",
+                "row_name": "Pistol_Cherrysmoke_Athena_VR_Ore_T03",
+                "field": "DmgLong",
+                "new_value": "15.200000",
+                "change": "Added"
+            },
+            {
+                "type": "DataTable",
+                "path": "/Game/Athena/Items/Weapons/AthenaRangedWeapons",
+                "row_name": "Pistol_Cherrysmoke_Athena_VR_Ore_T03",
+                "field": "DmgMaxRange",
+                "new_value": "14.250000",
+                "change": "Added"
+            },
+            {
+                "type": "DataTable",
+                "path": "/Game/Athena/Items/Weapons/AthenaRangedWeapons",
+                "row_name": "Pistol_Cherrysmoke_Athena_VR_Ore_T03",
+                "field": "EnvDmgPB",
+                "new_value": "13.000000",
+                "change": "Added"
+            },
+            {
+                "type": "DataTable",
+                "path": "/Game/Athena/Items/Weapons/AthenaRangedWeapons",
+                "row_name": "Pistol_Cherrysmoke_Athena_VR_Ore_T03",
+                "field": "EnvDmgMid",
+                "new_value": "13.000000",
+                "change": "Added"
+            },
+            {
+                "type": "DataTable",
+                "path": "/Game/Athena/Items/Weapons/AthenaRangedWeapons",
+                "row_name": "Pistol_Cherrysmoke_Athena_VR_Ore_T03",
+                "field": "EnvDmgLong",
+                "new_value": "13.000000",
+                "change": "Added"
+            },
+            {
+                "type": "DataTable",
+                "path": "/Game/Athena/Items/Weapons/AthenaRangedWeapons",
+                "row_name": "Pistol_Cherrysmoke_Athena_VR_Ore_T03",
+                "field": "EnvDmgMaxRange",
+                "new_value": "13.000000",
+                "change": "Added"
+            },
+            {
+                "type": "DataTable",
+                "path": "/Game/Athena/Items/Weapons/AthenaRangedWeapons",
+                "row_name": "Pistol_Cherrysmoke_Athena_SR_Ore_T03",
+                "field": "DmgPB",
+                "new_value": "20.000000",
+                "change": "Added"
+            },
+            {
+                "type": "DataTable",
+                "path": "/Game/Athena/Items/Weapons/AthenaRangedWeapons",
+                "row_name": "Pistol_Cherrysmoke_Athena_SR_Ore_T03",
+                "field": "DmgMid",
+                "new_value": "17.000000",
+                "change": "Added"
+            },
+            {
+                "type": "DataTable",
+                "path": "/Game/Athena/Items/Weapons/AthenaRangedWeapons",
+                "row_name": "Pistol_Cherrysmoke_Athena_SR_Ore_T03",
+                "field": "DmgLong",
+                "new_value": "16.000000",
+                "change": "Added"
+            },
+            {
+                "type": "DataTable",
+                "path": "/Game/Athena/Items/Weapons/AthenaRangedWeapons",
+                "row_name": "Pistol_Cherrysmoke_Athena_SR_Ore_T03",
+                "field": "DmgMaxRange",
+                "new_value": "15.000000",
+                "change": "Added"
+            },
+            {
+                "type": "DataTable",
+                "path": "/Game/Athena/Items/Weapons/AthenaRangedWeapons",
+                "row_name": "Pistol_Cherrysmoke_Athena_SR_Ore_T03",
+                "field": "EnvDmgPB",
+                "new_value": "13.000000",
+                "change": "Added"
+            },
+            {
+                "type": "DataTable",
+                "path": "/Game/Athena/Items/Weapons/AthenaRangedWeapons",
+                "row_name": "Pistol_Cherrysmoke_Athena_SR_Ore_T03",
+                "field": "EnvDmgMid",
+                "new_value": "13.000000",
+                "change": "Added"
+            },
+            {
+                "type": "DataTable",
+                "path": "/Game/Athena/Items/Weapons/AthenaRangedWeapons",
+                "row_name": "Pistol_Cherrysmoke_Athena_SR_Ore_T03",
+                "field": "EnvDmgLong",
+                "new_value": "13.000000",
+                "change": "Added"
+            },
+            {
+                "type": "DataTable",
+                "path": "/Game/Athena/Items/Weapons/AthenaRangedWeapons",
+                "row_name": "Pistol_Cherrysmoke_Athena_SR_Ore_T03",
+                "field": "EnvDmgMaxRange",
+                "new_value": "13.000000",
+                "change": "Added"
+            },
+            {
+                "type": "DataTable",
+                "path": "/Game/Athena/Items/Weapons/AthenaRangedWeapons",
+                "row_name": "Pistol_Cherrysmoke_Athena_UR_Ore_T03",
+                "field": "DmgPB",
+                "new_value": "21.000000",
+                "change": "Added"
+            },
+            {
+                "type": "DataTable",
+                "path": "/Game/Athena/Items/Weapons/AthenaRangedWeapons",
+                "row_name": "Pistol_Cherrysmoke_Athena_UR_Ore_T03",
+                "field": "DmgMid",
+                "new_value": "17.850000",
+                "change": "Added"
+            },
+            {
+                "type": "DataTable",
+                "path": "/Game/Athena/Items/Weapons/AthenaRangedWeapons",
+                "row_name": "Pistol_Cherrysmoke_Athena_UR_Ore_T03",
+                "field": "DmgLong",
+                "new_value": "16.799999",
+                "change": "Added"
+            },
+            {
+                "type": "DataTable",
+                "path": "/Game/Athena/Items/Weapons/AthenaRangedWeapons",
+                "row_name": "Pistol_Cherrysmoke_Athena_UR_Ore_T03",
+                "field": "DmgMaxRange",
+                "new_value": "15.750000",
+                "change": "Added"
+            },
+            {
+                "type": "DataTable",
+                "path": "/Game/Athena/Items/Weapons/AthenaRangedWeapons",
+                "row_name": "Pistol_Cherrysmoke_Athena_UR_Ore_T03",
+                "field": "EnvDmgPB",
+                "new_value": "14.000000",
+                "change": "Added"
+            },
+            {
+                "type": "DataTable",
+                "path": "/Game/Athena/Items/Weapons/AthenaRangedWeapons",
+                "row_name": "Pistol_Cherrysmoke_Athena_UR_Ore_T03",
+                "field": "EnvDmgMid",
+                "new_value": "14.000000",
+                "change": "Added"
+            },
+            {
+                "type": "DataTable",
+                "path": "/Game/Athena/Items/Weapons/AthenaRangedWeapons",
+                "row_name": "Pistol_Cherrysmoke_Athena_UR_Ore_T03",
+                "field": "EnvDmgLong",
+                "new_value": "14.000000",
+                "change": "Added"
+            },
+            {
+                "type": "DataTable",
+                "path": "/Game/Athena/Items/Weapons/AthenaRangedWeapons",
+                "row_name": "Pistol_Cherrysmoke_Athena_UR_Ore_T03",
+                "field": "EnvDmgMaxRange",
+                "new_value": "14.000000",
+                "change": "Added"
+            },
+            {
+                "type": "DataTable",
+                "path": "/Game/Athena/Items/Weapons/AthenaRangedWeapons",
+                "row_name": "Pistol_Cherrysmoke_Athena_X_R_Ore_T03",
+                "field": "HeatX1",
+                "new_value": "1.700000",
+                "change": "Added"
+            },
+            {
+                "type": "DataTable",
+                "path": "/Game/Athena/Items/Weapons/AthenaRangedWeapons",
+                "row_name": "Pistol_Cherrysmoke_Athena_X_R_Ore_T03",
+                "field": "HeatY1",
+                "new_value": "2.550000",
+                "change": "Added"
+            },
+            {
+                "type": "DataTable",
+                "path": "/Game/Athena/Items/Weapons/AthenaRangedWeapons",
+                "row_name": "Pistol_Cherrysmoke_Athena_X_R_Ore_T03",
+                "field": "HeatX2",
+                "new_value": "2.550000",
+                "change": "Added"
+            },
+            {
+                "type": "DataTable",
+                "path": "/Game/Athena/Items/Weapons/AthenaRangedWeapons",
+                "row_name": "Pistol_Cherrysmoke_Athena_X_R_Ore_T03",
+                "field": "HeatY2",
+                "new_value": "5.100000",
+                "change": "Added"
+            },
+            {
+                "type": "DataTable",
+                "path": "/Game/Athena/Items/Weapons/AthenaRangedWeapons",
+                "row_name": "Pistol_Cherrysmoke_Athena_X_R_Ore_T03",
+                "field": "HeatX3",
+                "new_value": "3.400000",
+                "change": "Added"
+            },
+            {
+                "type": "DataTable",
+                "path": "/Game/Athena/Items/Weapons/AthenaRangedWeapons",
+                "row_name": "Pistol_Cherrysmoke_Athena_X_R_Ore_T03",
+                "field": "HeatY3",
+                "new_value": "8.500000",
+                "change": "Added"
+            },
+            {
+                "type": "DataTable",
+                "path": "/Game/Athena/Items/Weapons/AthenaRangedWeapons",
+                "row_name": "Pistol_Cherrysmoke_Athena_X_R_Ore_T03",
+                "field": "CoolX1",
+                "new_value": "1.700000",
+                "change": "Added"
+            },
+            {
+                "type": "DataTable",
+                "path": "/Game/Athena/Items/Weapons/AthenaRangedWeapons",
+                "row_name": "Pistol_Cherrysmoke_Athena_X_R_Ore_T03",
+                "field": "CoolY1",
+                "new_value": "2.550000",
+                "change": "Added"
+            },
+            {
+                "type": "DataTable",
+                "path": "/Game/Athena/Items/Weapons/AthenaRangedWeapons",
+                "row_name": "Pistol_Cherrysmoke_Athena_X_R_Ore_T03",
+                "field": "CoolX2",
+                "new_value": "2.550000",
+                "change": "Added"
+            },
+            {
+                "type": "DataTable",
+                "path": "/Game/Athena/Items/Weapons/AthenaRangedWeapons",
+                "row_name": "Pistol_Cherrysmoke_Athena_X_R_Ore_T03",
+                "field": "CoolY2",
+                "new_value": "5.100000",
+                "change": "Added"
+            },
+            {
+                "type": "DataTable",
+                "path": "/Game/Athena/Items/Weapons/AthenaRangedWeapons",
+                "row_name": "Pistol_Cherrysmoke_Athena_X_R_Ore_T03",
+                "field": "CoolX3",
+                "new_value": "3.400000",
+                "change": "Added"
+            },
+            {
+                "type": "DataTable",
+                "path": "/Game/Athena/Items/Weapons/AthenaRangedWeapons",
+                "row_name": "Pistol_Cherrysmoke_Athena_X_R_Ore_T03",
+                "field": "CoolY3",
+                "new_value": "8.500000",
+                "change": "Added"
+            },
+            {
+                "type": "DataTable",
+                "path": "/Game/Athena/Items/Weapons/AthenaRangedWeapons",
+                "row_name": "Pistol_Cherrysmoke_Athena_X_R_Ore_T03",
+                "field": "DmgPB",
+                "new_value": "22.000000",
+                "change": "Added"
+            },
+            {
+                "type": "DataTable",
+                "path": "/Game/Athena/Items/Weapons/AthenaRangedWeapons",
+                "row_name": "Pistol_Cherrysmoke_Athena_X_R_Ore_T03",
+                "field": "DmgMid",
+                "new_value": "18.700001",
+                "change": "Added"
+            },
+            {
+                "type": "DataTable",
+                "path": "/Game/Athena/Items/Weapons/AthenaRangedWeapons",
+                "row_name": "Pistol_Cherrysmoke_Athena_X_R_Ore_T03",
+                "field": "DmgLong",
+                "new_value": "17.600000",
+                "change": "Added"
+            },
+            {
+                "type": "DataTable",
+                "path": "/Game/Athena/Items/Weapons/AthenaRangedWeapons",
+                "row_name": "Pistol_Cherrysmoke_Athena_X_R_Ore_T03",
+                "field": "DmgMaxRange",
+                "new_value": "16.500000",
+                "change": "Added"
+            },
+            {
+                "type": "DataTable",
+                "path": "/Game/Athena/Items/Weapons/AthenaRangedWeapons",
+                "row_name": "Pistol_Cherrysmoke_Athena_X_R_Ore_T03",
+                "field": "EnvDmgPB",
+                "new_value": "12.000000",
+                "change": "Added"
+            },
+            {
+                "type": "DataTable",
+                "path": "/Game/Athena/Items/Weapons/AthenaRangedWeapons",
+                "row_name": "Pistol_Cherrysmoke_Athena_X_R_Ore_T03",
+                "field": "EnvDmgMid",
+                "new_value": "12.000000",
+                "change": "Added"
+            },
+            {
+                "type": "DataTable",
+                "path": "/Game/Athena/Items/Weapons/AthenaRangedWeapons",
+                "row_name": "Pistol_Cherrysmoke_Athena_X_R_Ore_T03",
+                "field": "EnvDmgLong",
+                "new_value": "12.000000",
+                "change": "Added"
+            },
+            {
+                "type": "DataTable",
+                "path": "/Game/Athena/Items/Weapons/AthenaRangedWeapons",
+                "row_name": "Pistol_Cherrysmoke_Athena_X_R_Ore_T03",
+                "field": "EnvDmgMaxRange",
+                "new_value": "12.000000",
+                "change": "Added"
+            },
+            {
+                "type": "DataTable",
+                "path": "/CherrySmokeHeroRankingSystem/DataTables/CherrySmokeHeroRankingReactions",
+                "row_name": "Revive_Player_DBNO",
+                "field": "EventReactions",
+                "new_value": "(/Script/CherrySmokeHeroRankingSystemRuntime.FortEventReaction_IncreaseCherrySmokeHeroRank(Context=(TagName=\"CherrySmoke.HeroRank.Points.Context.ReviveDBNO\"),PointsAwarded=25.000000,bIgnoreMultiplier=False))",
+                "change": "Added"
+            },
+            {
+                "type": "DataTable",
+                "path": "/Figment_LootTables/DataTables/FigmentLootPackages",
+                "row_name": "WorldList.AthenaSupplyDrop.Weapon.Sniper.01",
+                "field": "Weight",
+                "new_value": "0.000000",
+                "change": "Added"
+            },
+            {
+                "type": "DataTable",
+                "path": "/Figment_LootTables/DataTables/FigmentLootPackages",
+                "row_name": "WorldList.AthenaSupplyDrop.Weapon.Sniper.12",
+                "field": "Weight",
+                "new_value": "0.000000",
+                "change": "Added"
+            },
+            {
+                "type": "DataTable",
+                "path": "/Figment_LootTables/DataTables/FigmentLootPackages",
+                "row_name": "WorldList.AthenaSupplyDrop.Weapon.Shotgun.02",
+                "field": "Weight",
+                "new_value": "0.000000",
+                "change": "Added"
+            },
+            {
+                "type": "DataTable",
+                "path": "/Figment_LootTables/DataTables/FigmentLootPackages",
+                "row_name": "WorldList.AthenaSupplyDrop.Weapon.Assault.01",
+                "field": "Weight",
+                "new_value": "0.000000",
+                "change": "Added"
+            },
+            {
+                "type": "DataTable",
+                "path": "/Figment_LootTables/DataTables/FigmentLootPackages",
+                "row_name": "WorldList.AthenaSupplyDrop.Weapon.Assault.03",
+                "field": "Weight",
+                "new_value": "0.000000",
+                "change": "Added"
+            },
+            {
+                "type": "DataTable",
+                "path": "/Figment_LootTables/DataTables/FigmentLootPackages",
+                "row_name": "WorldList.AthenaSupplyDrop.Weapon.Assault.05",
+                "field": "Weight",
+                "new_value": "0.000000",
+                "change": "Added"
+            },
+            {
+                "type": "DataTable",
+                "path": "/Figment_LootTables/DataTables/FigmentLootPackages",
+                "row_name": "WorldList.AthenaSupplyDrop.Weapon.Assault.13",
+                "field": "Weight",
+                "new_value": "0.000000",
+                "change": "Added"
+            },
+            {
+                "type": "DataTable",
+                "path": "/Figment_LootTables/DataTables/FigmentLootPackages",
+                "row_name": "WorldList.AthenaSupplyDrop.Weapon.Handgun.01",
+                "field": "Weight",
+                "new_value": "0.000000",
+                "change": "Added"
+            },
+            {
+                "type": "DataTable",
+                "path": "/Figment_LootTables/DataTables/FigmentLootPackages",
+                "row_name": "WorldList.AthenaSupplyDrop.Weapon.Handgun.03",
+                "field": "Weight",
+                "new_value": "0.000000",
+                "change": "Added"
+            },
+            {
+                "type": "DataTable",
+                "path": "/Figment_LootTables/DataTables/FigmentLootPackages",
+                "row_name": "WorldList.AthenaSupplyDrop.Weapon.Handgun.05",
+                "field": "Weight",
+                "new_value": "0.000000",
+                "change": "Added"
+            },
+            {
+                "type": "DataTable",
+                "path": "/Figment_LootTables/DataTables/FigmentLootPackages",
+                "row_name": "WorldList.AthenaSupplyDrop.Weapon.SMG.05",
+                "field": "Weight",
+                "new_value": "0.000000",
+                "change": "Added"
+            },
+            {
+                "type": "CurveTable",
+                "path": "/Game/Athena/Balance/DataTables/AthenaGameData",
+                "row_name": "Default.SafeZone",
+                "field": "ShrinkTime",
+                "new_value": "110",
+                "change": "Added"
+            },
+            {
+                "type": "CurveTable",
+                "path": "/Game/Athena/Balance/DataTables/AthenaGameData",
+                "row_name": "Default.SafeZone",
+                "field": "ShrinkTime",
+                "new_value": "110",
+                "change": "Added"
+            },
+            {
+                "type": "CurveTable",
+                "path": "/BRPlaylists/Athena/Playlists/Habanero/DataTables/OverrideGameData_Habanero_Build",
+                "row_name": "Default.SD.Fun",
+                "field": "OverTimeEnabled",
+                "new_value": "1.0",
+                "change": "Added"
+            },
+            {
+                "type": "CurveTable",
+                "path": "/BRPlaylists/Athena/Playlists/Habanero/DataTables/OverrideGameData_Habanero_Build",
+                "row_name": "Default.SD.Fun",
+                "field": "OverTimeEnabled",
+                "new_value": "1.0",
+                "change": "Added"
+            },
+            {
+                "type": "CurveTable",
+                "path": "/BRPlaylists/Athena/Playlists/Habanero/DataTables/OverrideGameData_Habanero_Build",
+                "row_name": "Default.SD.Fun.OverTime",
+                "field": "HealthFactor",
+                "new_value": "1.0",
+                "change": "Added"
+            },
+            {
+                "type": "CurveTable",
+                "path": "/BRPlaylists/Athena/Playlists/Habanero/DataTables/OverrideGameData_Habanero_Build",
+                "row_name": "Default.SD.Fun.OverTime",
+                "field": "HealthFactor",
+                "new_value": "1.0",
+                "change": "Added"
+            },
+            {
+                "type": "CurveTable",
+                "path": "/BRPlaylists/Athena/Playlists/Habanero/DataTables/OverrideGameData_Habanero_Build",
+                "row_name": "Default.SD.Fun.OverTime",
+                "field": "HealAmount",
+                "new_value": "5.0",
+                "change": "Added"
+            },
+            {
+                "type": "CurveTable",
+                "path": "/BRPlaylists/Athena/Playlists/Habanero/DataTables/OverrideGameData_Habanero_Build",
+                "row_name": "Default.SD.Fun.OverTime",
+                "field": "HealAmount",
+                "new_value": "5.0",
+                "change": "Added"
+            },
+            {
+                "type": "CurveTable",
+                "path": "/BRPlaylists/Athena/Playlists/Habanero/DataTables/OverrideGameData_Habanero_Build",
+                "row_name": "Default.SD.Fun.OverTime",
+                "field": "Duration",
+                "new_value": "5.0",
+                "change": "Added"
+            },
+            {
+                "type": "CurveTable",
+                "path": "/BRPlaylists/Athena/Playlists/Habanero/DataTables/OverrideGameData_Habanero_Build",
+                "row_name": "Default.SD.Fun.OverTime",
+                "field": "Duration",
+                "new_value": "5.0",
+                "change": "Added"
+            },
+            {
+                "type": "CurveTable",
+                "path": "/BRPlaylists/Athena/Playlists/Habanero/DataTables/OverrideGameData_Habanero_Build",
+                "row_name": "Default.SD.Fun.OverTime",
+                "field": "Tick",
+                "new_value": "0.35",
+                "change": "Added"
+            },
+            {
+                "type": "CurveTable",
+                "path": "/BRPlaylists/Athena/Playlists/Habanero/DataTables/OverrideGameData_Habanero_Build",
+                "row_name": "Default.SD.Fun.OverTime",
+                "field": "Tick",
+                "new_value": "0.35",
+                "change": "Added"
+            },
+            {
+                "type": "CurveTable",
+                "path": "/BRPlaylists/Athena/Playlists/NoBuildBR/HabaneroZBM/DataTables/OverrideGameData_Habanero_ZBM",
+                "row_name": "Default.SD.Fun",
+                "field": "OverTimeEnabled",
+                "new_value": "1.0",
+                "change": "Added"
+            },
+            {
+                "type": "CurveTable",
+                "path": "/BRPlaylists/Athena/Playlists/NoBuildBR/HabaneroZBM/DataTables/OverrideGameData_Habanero_ZBM",
+                "row_name": "Default.SD.Fun",
+                "field": "OverTimeEnabled",
+                "new_value": "1.0",
+                "change": "Added"
+            },
+            {
+                "type": "CurveTable",
+                "path": "/BRPlaylists/Athena/Playlists/NoBuildBR/HabaneroZBM/DataTables/OverrideGameData_Habanero_ZBM",
+                "row_name": "Default.SD.Fun.OverTime",
+                "field": "HealthFactor",
+                "new_value": "1.0",
+                "change": "Added"
+            },
+            {
+                "type": "CurveTable",
+                "path": "/BRPlaylists/Athena/Playlists/NoBuildBR/HabaneroZBM/DataTables/OverrideGameData_Habanero_ZBM",
+                "row_name": "Default.SD.Fun.OverTime",
+                "field": "HealthFactor",
+                "new_value": "1.0",
+                "change": "Added"
+            },
+            {
+                "type": "CurveTable",
+                "path": "/BRPlaylists/Athena/Playlists/NoBuildBR/HabaneroZBM/DataTables/OverrideGameData_Habanero_ZBM",
+                "row_name": "Default.SD.Fun.OverTime",
+                "field": "HealAmount",
+                "new_value": "5.0",
+                "change": "Added"
+            },
+            {
+                "type": "CurveTable",
+                "path": "/BRPlaylists/Athena/Playlists/NoBuildBR/HabaneroZBM/DataTables/OverrideGameData_Habanero_ZBM",
+                "row_name": "Default.SD.Fun.OverTime",
+                "field": "HealAmount",
+                "new_value": "5.0",
+                "change": "Added"
+            },
+            {
+                "type": "CurveTable",
+                "path": "/BRPlaylists/Athena/Playlists/NoBuildBR/HabaneroZBM/DataTables/OverrideGameData_Habanero_ZBM",
+                "row_name": "Default.SD.Fun.OverTime",
+                "field": "Duration",
+                "new_value": "5.0",
+                "change": "Added"
+            },
+            {
+                "type": "CurveTable",
+                "path": "/BRPlaylists/Athena/Playlists/NoBuildBR/HabaneroZBM/DataTables/OverrideGameData_Habanero_ZBM",
+                "row_name": "Default.SD.Fun.OverTime",
+                "field": "Duration",
+                "new_value": "5.0",
+                "change": "Added"
+            },
+            {
+                "type": "CurveTable",
+                "path": "/BRPlaylists/Athena/Playlists/NoBuildBR/HabaneroZBM/DataTables/OverrideGameData_Habanero_ZBM",
+                "row_name": "Default.SD.Fun.OverTime",
+                "field": "Tick",
+                "new_value": "0.35",
+                "change": "Added"
+            },
+            {
+                "type": "CurveTable",
+                "path": "/BRPlaylists/Athena/Playlists/NoBuildBR/HabaneroZBM/DataTables/OverrideGameData_Habanero_ZBM",
+                "row_name": "Default.SD.Fun.OverTime",
+                "field": "Tick",
+                "new_value": "0.35",
+                "change": "Added"
+            },
+            {
+                "type": "CurveTable",
+                "path": "/SimpleEdit/DataTables/Overrides/Competitive/SimpleEditData_Competitive",
+                "row_name": "SimpleEdit",
+                "field": "CanEnable",
+                "new_value": "1.0",
+                "change": "Added"
+            },
+            {
+                "type": "CurveTable",
+                "path": "/DemonArenaGameplay/DataTables/DemonArenaGameplayGameData",
+                "row_name": "DemonArena",
+                "field": "StormPhaseToSpawnIn",
+                "new_value": "2.0",
+                "change": "Added"
+            },
+            {
+                "type": "CurveTable",
+                "path": "/DemonArenaGameplay/DataTables/DemonArenaGameplayGameData",
+                "row_name": "DemonArena",
+                "field": "StormPhaseToSpawnIn",
+                "new_value": "2.0",
+                "change": "Added"
+            },
+            {
+                "type": "CurveTable",
+                "path": "/GravWellGameplay/DataTables/GravWellGameData",
+                "row_name": "Default.GravWell.Launch",
+                "field": "Duration",
+                "new_value": "0.3",
+                "change": "Added"
+            },
+            {
+                "type": "CurveTable",
+                "path": "/GravWellGameplay/DataTables/GravWellGameData",
+                "row_name": "Default.GravWell.Launch",
+                "field": "Duration",
+                "new_value": "0.3",
+                "change": "Added"
+            },
+            {
+                "type": "CurveTable",
+                "path": "/GravWellGameplay/DataTables/GravWellGameData",
+                "row_name": "Default.GravWell.Launch.Mag",
+                "field": "XY",
+                "new_value": "1100.0",
+                "change": "Added"
+            },
+            {
+                "type": "CurveTable",
+                "path": "/GravWellGameplay/DataTables/GravWellGameData",
+                "row_name": "Default.GravWell.Launch.Mag",
+                "field": "XY",
+                "new_value": "1100.0",
+                "change": "Added"
+            },
+            {
+                "type": "CurveTable",
+                "path": "/GravWellGameplay/DataTables/GravWellGameData",
+                "row_name": "Default.GravWell.Launch.Mag",
+                "field": "Z",
+                "new_value": "1450.0",
+                "change": "Added"
+            },
+            {
+                "type": "CurveTable",
+                "path": "/GravWellGameplay/DataTables/GravWellGameData",
+                "row_name": "Default.GravWell.Launch.Mag",
+                "field": "Z",
+                "new_value": "1450.0",
+                "change": "Added"
+            },
+            {
+                "type": "CurveTable",
+                "path": "/GravWellGameplay/DataTables/GravWellGameData",
+                "row_name": "Default.GravWell.Shield.Damage",
+                "field": "Cap",
+                "new_value": "250.0",
+                "change": "Added"
+            },
+            {
+                "type": "CurveTable",
+                "path": "/GravWellGameplay/DataTables/GravWellGameData",
+                "row_name": "Default.GravWell.Shield.Damage",
+                "field": "Cap",
+                "new_value": "250.0",
+                "change": "Added"
+            },
+            {
+                "type": "CurveTable",
+                "path": "/CRD_CreatorProfile/DataTable/CreatorProfileData",
+                "row_name": "Creative.CreatorProfile",
+                "field": "CanInteractWhenInvisible",
+                "new_value": "1.0",
+                "change": "Added"
+            },
+            {
+                "type": "CurveTable",
+                "path": "/PlotTwist/DataTables/Comp/PlotTwistGameData_Comp",
+                "row_name": "Default.PlotTwist.RiftGate.Spawner",
+                "field": "Enabled",
+                "new_value": "0.0",
+                "change": "Added"
+            },
+            {
+                "type": "CurveTable",
+                "path": "/PlotTwist/DataTables/Comp/PlotTwistGameData_Comp",
+                "row_name": "Default.PlotTwist.RiftGate.Spawner",
+                "field": "Enabled",
+                "new_value": "0.0",
+                "change": "Added"
+            },
+            {
+                "type": "CurveTable",
+                "path": "/PlotTwist/DataTables/Comp/PlotTwistGameData_Comp",
+                "row_name": "Default.PlotTwist.RiftGate.Spawner",
+                "field": "IgnoreCalenderEvent",
+                "new_value": "0.0",
+                "change": "Added"
+            },
+            {
+                "type": "CurveTable",
+                "path": "/PlotTwist/DataTables/Comp/PlotTwistGameData_Comp",
+                "row_name": "Default.PlotTwist.RiftGate.Spawner",
+                "field": "IgnoreCalenderEvent",
+                "new_value": "0.0",
+                "change": "Added"
+            },
+            {
+                "type": "CurveTable",
+                "path": "/PlotTwist/DataTables/Comp/PlotTwistGameData_Comp",
+                "row_name": "Default.PlotTwist.RiftGate.Spawner",
+                "field": "ChanceToSpawnPerCircle",
+                "new_value": "0.0",
+                "change": "Added"
+            },
+            {
+                "type": "CurveTable",
+                "path": "/PlotTwist/DataTables/Comp/PlotTwistGameData_Comp",
+                "row_name": "Default.PlotTwist.RiftGate.Spawner",
+                "field": "ChanceToSpawnPerCircle",
+                "new_value": "0.0",
+                "change": "Added"
+            },
+            {
+                "type": "CurveTable",
+                "path": "/PlotTwist/DataTables/Comp/PlotTwistGameData_Comp",
+                "row_name": "Default.PlotTwist.RiftGate.Spawner.BR",
+                "field": "MaxTotalSpawn",
+                "new_value": "0.0",
+                "change": "Added"
+            },
+            {
+                "type": "CurveTable",
+                "path": "/PlotTwist/DataTables/Comp/PlotTwistGameData_Comp",
+                "row_name": "Default.PlotTwist.RiftGate.Spawner.BR",
+                "field": "MaxTotalSpawn",
+                "new_value": "0.0",
+                "change": "Added"
+            },
+            {
+                "type": "CurveTable",
+                "path": "/PlotTwist/DataTables/Comp/PlotTwistGameData_Comp",
+                "row_name": "Default.PlotTwist.RiftGate.Spawner.BR.Circle0",
+                "field": "MinSpawn",
+                "new_value": "0.0",
+                "change": "Added"
+            },
+            {
+                "type": "CurveTable",
+                "path": "/PlotTwist/DataTables/Comp/PlotTwistGameData_Comp",
+                "row_name": "Default.PlotTwist.RiftGate.Spawner.BR.Circle0",
+                "field": "MinSpawn",
+                "new_value": "0.0",
+                "change": "Added"
+            },
+            {
+                "type": "CurveTable",
+                "path": "/PlotTwist/DataTables/Comp/PlotTwistGameData_Comp",
+                "row_name": "Default.PlotTwist.RiftGate.Spawner.BR.Circle0",
+                "field": "MaxSpawn",
+                "new_value": "0.0",
+                "change": "Added"
+            },
+            {
+                "type": "CurveTable",
+                "path": "/PlotTwist/DataTables/Comp/PlotTwistGameData_Comp",
+                "row_name": "Default.PlotTwist.RiftGate.Spawner.BR.Circle0",
+                "field": "MaxSpawn",
+                "new_value": "0.0",
+                "change": "Added"
+            },
+            {
+                "type": "CurveTable",
+                "path": "/PlotTwist/DataTables/Comp/PlotTwistGameData_Comp",
+                "row_name": "Default.PlotTwist.RiftGate.Spawner.BR.Circle1",
+                "field": "MinSpawn",
+                "new_value": "0.0",
+                "change": "Added"
+            },
+            {
+                "type": "CurveTable",
+                "path": "/PlotTwist/DataTables/Comp/PlotTwistGameData_Comp",
+                "row_name": "Default.PlotTwist.RiftGate.Spawner.BR.Circle1",
+                "field": "MinSpawn",
+                "new_value": "0.0",
+                "change": "Added"
+            },
+            {
+                "type": "CurveTable",
+                "path": "/PlotTwist/DataTables/Comp/PlotTwistGameData_Comp",
+                "row_name": "Default.PlotTwist.RiftGate.Spawner.BR.Circle1",
+                "field": "MaxSpawn",
+                "new_value": "0.0",
+                "change": "Added"
+            },
+            {
+                "type": "CurveTable",
+                "path": "/PlotTwist/DataTables/Comp/PlotTwistGameData_Comp",
+                "row_name": "Default.PlotTwist.RiftGate.Spawner.BR.Circle1",
+                "field": "MaxSpawn",
+                "new_value": "0.0",
+                "change": "Added"
+            },
+            {
+                "type": "CurveTable",
+                "path": "/PlotTwist/DataTables/Comp/PlotTwistGameData_Comp",
+                "row_name": "Default.PlotTwist.RiftGate.Spawner.BR.Circle2",
+                "field": "MinSpawn",
+                "new_value": "0.0",
+                "change": "Added"
+            },
+            {
+                "type": "CurveTable",
+                "path": "/PlotTwist/DataTables/Comp/PlotTwistGameData_Comp",
+                "row_name": "Default.PlotTwist.RiftGate.Spawner.BR.Circle2",
+                "field": "MinSpawn",
+                "new_value": "0.0",
+                "change": "Added"
+            },
+            {
+                "type": "CurveTable",
+                "path": "/PlotTwist/DataTables/Comp/PlotTwistGameData_Comp",
+                "row_name": "Default.PlotTwist.RiftGate.Spawner.BR.Circle2",
+                "field": "MaxSpawn",
+                "new_value": "0.0",
+                "change": "Added"
+            },
+            {
+                "type": "CurveTable",
+                "path": "/PlotTwist/DataTables/Comp/PlotTwistGameData_Comp",
+                "row_name": "Default.PlotTwist.RiftGate.Spawner.BR.Circle2",
+                "field": "MaxSpawn",
+                "new_value": "0.0",
+                "change": "Added"
+            },
+            {
+                "type": "CurveTable",
+                "path": "/PlotTwist/DataTables/Comp/PlotTwistGameData_Comp",
+                "row_name": "Default.PlotTwist.RiftGate.Spawner.BR.Circle3",
+                "field": "MinSpawn",
+                "new_value": "0.0",
+                "change": "Added"
+            },
+            {
+                "type": "CurveTable",
+                "path": "/PlotTwist/DataTables/Comp/PlotTwistGameData_Comp",
+                "row_name": "Default.PlotTwist.RiftGate.Spawner.BR.Circle3",
+                "field": "MinSpawn",
+                "new_value": "0.0",
+                "change": "Added"
+            },
+            {
+                "type": "CurveTable",
+                "path": "/PlotTwist/DataTables/Comp/PlotTwistGameData_Comp",
+                "row_name": "Default.PlotTwist.RiftGate.Spawner.BR.Circle3",
+                "field": "MaxSpawn",
+                "new_value": "0.0",
+                "change": "Added"
+            },
+            {
+                "type": "CurveTable",
+                "path": "/PlotTwist/DataTables/Comp/PlotTwistGameData_Comp",
+                "row_name": "Default.PlotTwist.RiftGate.Spawner.BR.Circle3",
+                "field": "MaxSpawn",
+                "new_value": "0.0",
+                "change": "Added"
+            }
+        ]
+    }
+]
