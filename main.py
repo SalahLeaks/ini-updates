@@ -22,13 +22,13 @@ DEVICE_ID      = os.getenv("EPIC_DEVICE_ID")
 DEVICE_SECRET  = os.getenv("EPIC_DEVICE_SECRET")
 ACCOUNT_ID     = os.getenv("EPIC_ACCOUNT_ID")
 CLIENT_SECRET  = os.getenv("EPIC_CLIENT_SECRET")
-PING_ROLE_ID   = int(os.getenv("PING_ROLE_ID", "1377235625261928519"))  
+PING_ROLE_ID   = int(os.getenv("PING_ROLE_ID", ""))
 
 TOKEN_URL      = "https://account-public-service-prod.ol.epicgames.com/account/api/oauth/token"
 SYSTEM_API_URL = "https://fngw-mcp-gc-livefn.ol.epicgames.com/fortnite/api/cloudstorage/system"
 
 DISCORD_TOKEN = os.getenv("DISCORD_BOT_TOKEN")
-CHANNEL_ID    = int(os.getenv("DISCORD_CHANNEL_ID", "1369279347415846932"))
+CHANNEL_ID    = int(os.getenv("DISCORD_CHANNEL_ID", ""))
 POLL_INTERVAL = int(os.getenv("POLL_INTERVAL", "60"))
 STATE_DIR     = "state"
 os.makedirs(STATE_DIR, exist_ok=True)
@@ -268,13 +268,7 @@ class FortniteTrackerBot(discord.Client):
                 )
 
                 if total_parsed == 0:
-                    count_embed = Embed(title=f"Parsed Updates in {friendly_name}")
-                    count_embed.add_field(name="Strings",     value="0", inline=True)
-                    count_embed.add_field(name="DataTables",  value="0", inline=True)
-                    count_embed.add_field(name="CurveTables", value="0", inline=True)
-                    count_embed.add_field(name="Total Mods",  value="0", inline=False)
-
-                    await channel.send(content=ping_msg, embed=count_embed, file=diff_file)
+                    await channel.send(content=ping_msg, file=diff_file)
                     logging.info(f"No parsed mods; sent raw diff JSON for {friendly_name}.")
                     continue
 
@@ -320,19 +314,7 @@ class FortniteTrackerBot(discord.Client):
                             e.add_field(name=f"**{key}**", value=f"➥ {text}", inline=False)
                         embeds.append(e)
 
-                count_embed = Embed(title=f"Parsed Updates in {friendly_name}")
-                count_embed.add_field(name="Strings",     value=str(len(hotfixes_plus)), inline=True)
-                count_embed.add_field(name="DataTables",  value=str(len(dt_plus)),         inline=True)
-                count_embed.add_field(name="CurveTables", value=str(len(ct_plus)),         inline=True)
-                total_mods = (
-                    len(hotfixes_plus)
-                    + len(dt_plus)
-                    + len(dt_minus)
-                    + len(ct_plus)
-                    + len(ct_minus)
-                )
-                count_embed.add_field(name="Total Mods", value=str(total_mods), inline=False)
-
+                # write out parsed summary JSON
                 parsed_path = os.path.join(STATE_DIR, f"{friendly_name}_parsed.json")
                 with open(parsed_path, "w", encoding="utf-8") as f:
                     json.dump([{
@@ -347,10 +329,10 @@ class FortniteTrackerBot(discord.Client):
                 with open(parsed_path, "rb") as fp:
                     parsed_file = File(fp, filename=os.path.basename(parsed_path))
 
-                all_embeds = embeds + [count_embed]
+                all_embeds = embeds
                 for i in range(0, len(all_embeds), 10):
                     chunk = all_embeds[i:i+10]
-                    if i+10 >= len(all_embeds):
+                    if i + 10 >= len(all_embeds):
                         await channel.send(content=ping_msg, embeds=chunk, file=parsed_file)
                     else:
                         await channel.send(content=ping_msg, embeds=chunk)
