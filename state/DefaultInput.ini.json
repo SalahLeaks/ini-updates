@@ -1,5 +1,0 @@
-[
-  "[ConfigD /Script/FortniteGame.FortPlayerInputSettings]\n",
-  "-ActionMappings=(ActionName=\"ToggleFullScreenMap\", Key=Gamepad_DPad_Right)\n",
-  "+ActionMappings=(ActionName=\"ToggleFullScreenMap\", Key=Gamepad_DPad_Up)"
-]

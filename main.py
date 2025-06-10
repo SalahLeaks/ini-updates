@@ -23,114 +23,7 @@ DEVICE_SECRET  = os.getenv("EPIC_DEVICE_SECRET")
 ACCOUNT_ID     = os.getenv("EPIC_ACCOUNT_ID")
 CLIENT_SECRET  = os.getenv("EPIC_CLIENT_SECRET")
 TOKEN_URL      = "https://account-public-service-prod.ol.epicgames.com/account/api/oauth/token"
-
-FILENAME_ENTRIES = [
-    {"uniqueFilename": "1d2228689c594fd0b31a9d18557e6715", "filename": "Switch2_Game.ini"},
-    {"uniqueFilename": "3391a26843124750be0b74328b59bf62", "filename": "Switch2_DelMarGameEngine.ini"},
-    {"uniqueFilename": "5b512d02374d4cf788a45db70830aced", "filename": "AndroidDelMarGameEngine.ini"},
-    {"uniqueFilename": "69f6b4b9a8d44714823e88a4168fa05c", "filename": "DefaultSproutNativeEngine.ini"},
-    {"uniqueFilename": "8ac9796933b34490877cf379b1b56340", "filename": "IOSDelMarGameEngine.ini"},
-    {"uniqueFilename": "05222e1e3b1c4cdf8b9bd4cc5ac8e474", "filename": "XB1_Game.ini"},
-    {"uniqueFilename": "dc8b801fbd8b469ba4ea7911a7e6e026", "filename": "SwitchDelMarGameEngine.ini"},
-    {"uniqueFilename": "8d3fbfa671c440208074936d6d556aa9", "filename": "IOS_RuntimeOptions.ini"},
-    {"uniqueFilename": "f8b471a6ab424b9ca4cd661dcfb957b2", "filename": "Luna_Engine.ini"},
-    {"uniqueFilename": "9e5cecff415440de8e7053dc7c4fdbfe", "filename": "PS5_Game.ini"},
-    {"uniqueFilename": "379ab813483b42acbd8515bf232f98ba", "filename": "Switch_Game.ini"},
-    {"uniqueFilename": "b917f95ae41c48a99410665f73a64744", "filename": "DefaultSproutCoreGame.ini"},
-    {"uniqueFilename": "a22d837b6a2b46349421259c0a5411bf", "filename": "DefaultGame.ini"},
-    {"uniqueFilename": "7ceeec96eec94087a301ade3827d5404", "filename": "DefaultJunoGameNativeGame.ini"},
-    {"uniqueFilename": "7e2a2faad62e4456ae4bc78553501844", "filename": "Switch_DeviceProfiles.ini"},
-    {"uniqueFilename": "fa57ce82afcc4be799b757233fb9ffb3", "filename": "GameUserSettings.ini"},
-    {"uniqueFilename": "6c4ff78307b2456ea35df698ae78cf4f", "filename": "Luna_GameUserSettings.ini"},
-    {"uniqueFilename": "79f247dc894b42fe84daa0e8a99e4f9f", "filename": "DefaultRedirect.ini"},
-    {"uniqueFilename": "2e1de9d7b64e4823b6f8cded95c5027d", "filename": "IOS_Engine.ini"},
-    {"uniqueFilename": "38bf5c1a86c04836b2a1c653de52e636", "filename": "XSX_Engine.ini"},
-    {"uniqueFilename": "95db0508d0794345bca0a7e1364727e6", "filename": "SwitchSproutNativeDeviceProfiles.ini"},
-    {"uniqueFilename": "154ec927d0e341e49e6131a27b411777", "filename": "LunaMobile_GameUserSettings.ini"},
-    {"uniqueFilename": "c7dee411e20a44ab930f841e8d206b1b", "filename": "DefaultDeviceProfiles.ini"},
-    {"uniqueFilename": "ba1921826e5a487cb3b48dafb4e04585", "filename": "XB1_Engine.ini"},
-    {"uniqueFilename": "43e613b33eee4ebcbb37dc813ad3a457", "filename": "XSX_RuntimeOptions.ini"},
-    {"uniqueFilename": "b4c55b97ee4944ef8898ddc9c6ac1d43", "filename": "DefaultInput.ini"},
-    {"uniqueFilename": "ef06ff5e38824ba898047570cfb96ac9", "filename": "GFNMobile_Engine.ini"},
-    {"uniqueFilename": "9626257880174145aa5aacfe11324c8e", "filename": "Android_Engine.ini"},
-    {"uniqueFilename": "235f68ae4db5483b8f6e66dee5d29ae8", "filename": "MacClient_Engine.ini"},
-    {"uniqueFilename": "e000dd0687b34cffa247532a8d7e4fd0", "filename": "Switch_RuntimeOptions.ini"},
-    {"uniqueFilename": "93f93825f97a48739ea8761983eae344", "filename": "DefaultHardware.ini"},
-    {"uniqueFilename": "f9d8df13a971457aa587310f5677715e", "filename": "Helios_Game.ini"},
-    {"uniqueFilename": "fc32184f109f47df9b71da7eebd11e4d", "filename": "IOS_Game.ini"},
-    {"uniqueFilename": "919e99607d9f4e92b34b9a0a14cbe8ad", "filename": "HeliosMobile_RuntimeOptions.ini"},
-    {"uniqueFilename": "28380724efe7440dbb81a6e020c33f8e", "filename": "Android_Game.ini"},
-    {"uniqueFilename": "f51be88fb63944d981fb17e9e8a011aa", "filename": "HeliosMobile_Engine.ini"},
-    {"uniqueFilename": "8127e4ae4beb4438b7d18df0c4c842f8", "filename": "PS5_DeviceProfiles.ini"},
-    {"uniqueFilename": "a8e2eec195754563a9c8c559dc7d7a8b", "filename": "ValkyrieFortniteEditorEarlyAccessPermissions.json"},
-    {"uniqueFilename": "ea6af556c11c4345b286ad69d4a57dbb", "filename": "MacClient_RuntimeOptions.ini"},
-    {"uniqueFilename": "74fc422917244c5b97ad8189f4226a3c", "filename": "ValkyrieEditorConfig-FortniteGFS.json"},
-    {"uniqueFilename": "de74e4fc39a147339df12f324d9201f4", "filename": "SproutNativeEngine.ini"},
-    {"uniqueFilename": "75546d2569d94f9c9a9caff7e290c48b", "filename": "XB1_DeviceProfiles.ini"},
-    {"uniqueFilename": "4076f7d595cc432fa6bb9d8694adcf2e", "filename": "PS4_Game.ini"},
-    {"uniqueFilename": "6c33ead15c254f0da675c8c5aef79e84", "filename": "XB1_RuntimeOptions.ini"},
-    {"uniqueFilename": "3f9feaebb56043bc9792b0805a821a8d", "filename": "PS4_RuntimeOptions.ini"},
-    {"uniqueFilename": "c0de0ad59f634afa8fb7536183b43d44", "filename": "MacClient_Game.ini"},
-    {"uniqueFilename": "72ef70a2781240a7a922a1aa3e34c87f", "filename": "WindowsEngine.ini"},
-    {"uniqueFilename": "73e12b1bfbdd4e8a9a43336746278a3a", "filename": "GFN_RuntimeOptions.ini"},
-    {"uniqueFilename": "dbfa6466d8a345ebb1ece39b5609c9f0", "filename": "XB1JunoGameNativeDeviceProfiles.ini"},
-    {"uniqueFilename": "d16053edfaa74782b72283b51e7d393f", "filename": "DefaultFigmentCoreGame.ini"},
-    {"uniqueFilename": "e3978add72f649fb81a67a1b7ad89445", "filename": "GFNMobile_RuntimeOptions.ini"},
-    {"uniqueFilename": "311cc2f8c6fa4998b2f115ac52a70f9c", "filename": "XSXJunoGameNativeDeviceProfiles.ini"},
-    {"uniqueFilename": "ba905cc6a853447fb5d6cf41b0ec68d0", "filename": "DefaultEditor.ini"},
-    {"uniqueFilename": "fdd7170801c54f08afb89d090dffb5f9", "filename": "LunaMobile_Engine.ini"},
-    {"uniqueFilename": "ee3aa8eba49c4a37a635d3231becad1e", "filename": "SwitchJunoGameNativeDeviceProfiles.ini"},
-    {"uniqueFilename": "5211a1dbda8c422d940de277ff124585", "filename": "DefaultSproutTG_RiotFly_Gameplay.ini"},
-    {"uniqueFilename": "3ac3b63afdee4a45b087811deb7678c4", "filename": "PS4_DeviceProfiles.ini"},
-    {"uniqueFilename": "8987f8d84da848c5accc7fccb80fbe0d", "filename": "Helios_RuntimeOptions.ini"},
-    {"uniqueFilename": "8f29d8be2d1c464eb51b16f41f406a0d", "filename": "PS4JunoGameNativeDeviceProfiles.ini"},
-    {"uniqueFilename": "6d41966083cd4793842726e20c3b549e", "filename": "Scalability.ini"},
-    {"uniqueFilename": "b33eeb3757ae4a54b1fd10e8be630c0a", "filename": "LunaMobile_RuntimeOptions.ini"},
-    {"uniqueFilename": "b800b911053c4906a5bd399f46ae0055", "filename": "WindowsClient_RuntimeOptions.ini"},
-    {"uniqueFilename": "c4d901de2aa5427f85734b6a85aa2000", "filename": "DeviceProfiles.ini"},
-    {"uniqueFilename": "b6c60402a72e4081a6a47c641371c19f", "filename": "WindowsClient_Engine.ini"},
-    {"uniqueFilename": "508f91af3aa6498c915202b7be1714dd", "filename": "DefaultJunoGameGame.ini"},
-    {"uniqueFilename": "6549646f938f41f0b265173a358fb495", "filename": "GFN_Engine.ini"},
-    {"uniqueFilename": "05222e1e3b1c4cdf8b9bd4cc5ac8e474", "filename": "XB1_Game.ini"},
-    {"uniqueFilename": "57122528c65b445cb8c44709b096b1ed", "filename": "XSX_DeviceProfiles.ini"},
-    {"uniqueFilename": "b1a172e4fdd746dc8815d61d379f198f", "filename": "PS5_RuntimeOptions.ini"},
-    {"uniqueFilename": "15326849197846eab3fd92a3aaa59b9e", "filename": "XSX_Scalability.ini"},
-    {"uniqueFilename": "430b3d85a2024f81b6fb4fb4d20f12ed", "filename": "XSX_Game.ini"},
-    {"uniqueFilename": "4c4c823bbf9c4b0db6247e7ab36d37ab", "filename": "DefaultFigmentCoreEngine.ini"},
-    {"uniqueFilename": "b22d3cad8e4f4ceeb5c55442f691b165", "filename": "Switch_Engine.ini"},
-    {"uniqueFilename": "dc4ff873db7b4d93bcf72014bbbaa4b9", "filename": "PS4_Engine.ini"},
-    {"uniqueFilename": "c52c1f9246eb48ce9dade87be5a66f29", "filename": "DefaultRuntimeOptions.ini"},
-    {"uniqueFilename": "e9f237bed0d24a878c2132607831ff0c", "filename": "DefaultSpatialMetrics.ini"},
-    {"uniqueFilename": "b6a9b64b52d14e60bf59360b41b119c9", "filename": "WindowsClient_DeviceProfiles.ini"},
-    {"uniqueFilename": "1d773864100a4f53aac1eedf2eb3c332", "filename": "DefaultServiceBackup.ini"},
-    {"uniqueFilename": "bac36c922b2f4ebe96a47d4bd6ebd05c", "filename": "DefaultSproutCoreEngine.ini"},
-    {"uniqueFilename": "7d524f65b03a49b88d3e5d5268480f1f", "filename": "ValkyrieFortniteEditorPermissions.json"},
-    {"uniqueFilename": "eedca963133e4c959bef113bff80b8e8", "filename": "DefaultJunoGameNativeEngine.ini"},
-    {"uniqueFilename": "bbb036613a204f78a36a4653bf5e6bd0", "filename": "LunaMobile_Game.ini"},
-    {"uniqueFilename": "c8a801897ec04667973d4f12f4b12399", "filename": "PS5_Scalability.ini"},
-    {"uniqueFilename": "dc24c42ffe9a4cc5ae3a9946b4e5e95d", "filename": "PS5_Engine.ini"},
-    {"uniqueFilename": "248d9bec1311419b81f08df4e1473940", "filename": "PS5JunoGameNativeDeviceProfiles.ini"},
-    {"uniqueFilename": "7e2a66ce68554814b1bd0aa14351cd71", "filename": "WindowsClient_Game.ini"},
-    {"uniqueFilename": "600a5f12fdfd491dbe8ffb62a3d8a8cb", "filename": "HeliosMobile_Game.ini"},
-    {"uniqueFilename": "1c7eb1831955468f949854f706ed542c", "filename": "DefaultPartnerLimeGFSEngine.ini"},
-    {"uniqueFilename": "3460cbe1c57d4a838ace32951a4d7171", "filename": "DefaultEngine.ini"},
-    {"uniqueFilename": "494983533c8d4cc38d3f3cd3c81f75f4", "filename": "GFNMobile_Game.ini"},
-    {"uniqueFilename": "6ad739ad7483464eb6448710cba4cf1e", "filename": "SwitchSproutNativeEngine.ini"},
-    {"uniqueFilename": "ea95a5ff1474476f8ce9f0c500dd040b", "filename": "DefaultLimeGFSEngine.ini"},
-    {"uniqueFilename": "6eab62f6409e490b871e5c509503c579", "filename": "Android_RuntimeOptions.ini"},
-    {"uniqueFilename": "1858cde1df144e51a71733207c4968af", "filename": "GFN_Game.ini"},
-    {"uniqueFilename": "532dc6866ade40c7b2f69fb2c9b5b3a0", "filename": "AndroidJunoGameNativeDeviceProfiles.ini"},
-    {"uniqueFilename": "31ef7bccad1c4471a9de0939e0c64e86", "filename": "DefaultDelMarGameEngine.ini"},
-    {"uniqueFilename": "b175cde10a9a420f8e151bade9d33918", "filename": "Luna_Game.ini"},
-    {"uniqueFilename": "a22d837b6a2b46349421259c0a5411bf", "filename": "DefaultGame.ini"},
-    {"uniqueFilename": "8d3fbfa671c440208074936d6d556aa9", "filename": "IOS_RuntimeOptions.ini"},
-    {"uniqueFilename": "f8b471a6ab424b9ca4cd661dcfb957b2", "filename": "Luna_Engine.ini"},
-    {"uniqueFilename": "13eb6542dda140d9aceeb5f25f92a2ed", "filename": "SproutJobs_BaseGame.ini"},
-]
-
-BASE_URL     = "https://fngw-mcp-gc-livefn.ol.epicgames.com/fortnite/api/cloudstorage/system/"
-ENDPOINTS    = [BASE_URL + e["uniqueFilename"] for e in FILENAME_ENTRIES]
-FILENAME_MAP = {e["uniqueFilename"]: e["filename"] for e in FILENAME_ENTRIES}
+SYSTEM_API_URL = "https://fngw-mcp-gc-livefn.ol.epicgames.com/fortnite/api/cloudstorage/system"
 
 DISCORD_TOKEN = os.getenv("DISCORD_BOT_TOKEN")
 CHANNEL_ID    = int(os.getenv("DISCORD_CHANNEL_ID", "YOUR_CHANNEL_ID"))
@@ -145,10 +38,27 @@ class FortniteTrackerBot(discord.Client):
         self.access_token     = None
         self.refresh_token    = None
         self.token_expires_at = datetime.utcnow()
+        self.filename_map     = {}
+        self.endpoints        = []
 
     async def on_ready(self):
         logging.info("Bot is online and ready.")
+        # Fetch dynamic list of files
+        await self.load_file_list()
         asyncio.create_task(self.poll_loop())
+
+    async def load_file_list(self):
+        logging.info("Fetching system file list…")
+        text = await self.fetch_json(SYSTEM_API_URL)
+        data = json.loads(text)
+        # Build mapping and endpoint URLs
+        for entry in data:
+            ufn = entry.get("uniqueFilename")
+            fname = entry.get("filename")
+            if ufn and fname:
+                self.filename_map[ufn] = fname
+                self.endpoints.append(f"{SYSTEM_API_URL}/{ufn}")
+        logging.info(f"Loaded {len(self.endpoints)} files to track.")
 
     async def device_auth(self):
         data = {
@@ -206,6 +116,7 @@ class FortniteTrackerBot(discord.Client):
             resp.raise_for_status()
             return await resp.text()
 
+    # parsing helpers unchanged...
     def _parse_hotfix_strings(self, lines):
         pat = re.compile(
             r'\+TextReplacements=.*?Key="(?P<k>[^"]+)".*?LocalizedStrings=\(\((?P<i>.+?)\)\)\)\n'
@@ -223,91 +134,68 @@ class FortniteTrackerBot(discord.Client):
         return out
 
     def _parse_datatable(self, lines, sign):
+        # identical to before...
         out = []
         for l in lines:
             if f"{sign}DataTable=" not in l:
                 continue
-
             body = l.lstrip(f"{sign} ").rstrip()
-
             try:
                 _, rest = body.split("=", 1)
             except ValueError:
                 continue
-
             parts = rest.split(";", 4)
-
             if len(parts) == 5:
                 path, action, row, field, value = parts
                 out.append((path, row, field, value, sign))
-
             elif len(parts) == 3:
                 path, action, inner = parts
                 if action == "AddRow":
                     try:
-
-                        if inner.startswith('"') and inner.endswith('"'):
-                            inner_content = inner[1:-1]
-                        else:
-                            inner_content = inner
+                        inner_content = inner[1:-1] if (inner.startswith('"') and inner.endswith('"')) else inner
                         data = json.loads(inner_content)
                         row_name = data.get("Name", "")
                         wrapped_str = data.get("WrappedString", "")
-                        out.append((path, row_name, " WrappedString", wrapped_str, sign))
+                        out.append((path, row_name, "WrappedString", wrapped_str, sign))
                     except json.JSONDecodeError:
-                        logging.warning(f"[parse_datatable] Failed to JSON‐decode AddRow content: {inner}")
-                        continue
-
+                        logging.warning(f"[parse_datatable] JSON‐decode failed: {inner}")
                 elif action == "TableUpdate":
                     try:
-                        if inner.startswith('"') and inner.endswith('"'):
-                            inner_content = inner[1:-1]
-                        else:
-                            inner_content = inner
+                        inner_content = inner[1:-1] if (inner.startswith('"') and inner.endswith('"')) else inner
                         data_list = json.loads(inner_content)
                         for entry in data_list:
-                            name = entry.get("Name", "")
-                            task_tag = ""
-                            ti_obj = entry.get("TaskIdentifier", {})
-                            if isinstance(ti_obj, dict):
-                                task_tag = ti_obj.get("TagName", "")
-                            link = entry.get("LinkedQuestDefinition", "")
-                            out.append((path, name, "TaskIdentifier.TagName", task_tag, sign))
-                            out.append((path, name, "LinkedQuestDefinition", link, sign))
+                            name = entry.get("Name","")
+                            ti_obj = entry.get("TaskIdentifier",{})
+                            task_tag = ti_obj.get("TagName","") if isinstance(ti_obj,dict) else ""
+                            link = entry.get("LinkedQuestDefinition","")
+                            out.append((path,name,"TaskIdentifier.TagName",task_tag,sign))
+                            out.append((path,name,"LinkedQuestDefinition",link,sign))
                     except json.JSONDecodeError:
-                        logging.warning(f"[parse_datatable] Failed to JSON‐decode TableUpdate content: {inner}")
-                        continue
-
-                else:
-                    continue
-
-            else:
-                continue
-
+                        logging.warning(f"[parse_datatable] JSON‐decode failed: {inner}")
         return out
 
     def _parse_curvetable(self, lines, sign):
+        # identical to before...
         out = []
         for l in lines:
             if f"{sign}CurveTable=" not in l:
                 continue
             body = l.lstrip(f"{sign} ").rstrip()
             try:
-                _, rest = body.split("=", 1)
+                _, rest = body.split("=",1)
             except ValueError:
                 continue
-            parts = rest.split(";", 4)
+            parts = rest.split(";",4)
             if len(parts) < 5:
                 continue
             path, action, identifier, input_val, new_val = parts
             if "." not in identifier:
                 continue
-            row, field = identifier.rsplit(".", 1)
+            row, field = identifier.rsplit(".",1)
             out.append((path, row, field, new_val, sign))
         return out
 
     async def send_embed_safe(self, channel, embed, file=None):
-
         try:
             await channel.send(embed=embed, file=file)
             logging.info("Message sent successfully")
@@ -315,15 +203,13 @@ class FortniteTrackerBot(discord.Client):
             msg = str(he).lower()
             if "embeds too large" in msg or "maximum number of embeds" in msg:
                 fields = embed.fields
-
-                chunks = [fields[i : i + 5] for i in range(0, len(fields), 5)]
-                for idx, chunk in enumerate(chunks, 1):
-                    part = Embed(title=f"{embed.title} (part {idx}/{len(chunks)})", color=discord.Color.blue())
+                chunks = [fields[i:i+5] for i in range(0,len(fields),5)]
+                for idx, chunk in enumerate(chunks,1):
+                    part = Embed(title=f"{embed.title} (part {idx}/{len(chunks)})")
                     for f in chunk:
                         part.add_field(name=f.name, value=f.value, inline=f.inline)
                     try:
                         await channel.send(embed=part)
-                        logging.info(f"Sent split embed part {idx}/{len(chunks)}")
                     except Exception:
                         pass
         except Exception:
@@ -332,13 +218,13 @@ class FortniteTrackerBot(discord.Client):
     async def poll_loop(self):
         await self.wait_until_ready()
         channel = self.get_channel(CHANNEL_ID)
-        logging.info(f"Starting poll loop against {len(ENDPOINTS)} endpoints.")
+        logging.info(f"Starting poll loop against {len(self.endpoints)} endpoints.")
 
         while True:
             logging.info("Fetching data from Cloud Storage endpoints…")
-            for url in ENDPOINTS:
+            for url in self.endpoints:
                 key           = url.rsplit("/", 1)[-1]
-                friendly_name = FILENAME_MAP.get(key, key)
+                friendly_name = self.filename_map.get(key, key)
                 state_file    = os.path.join(STATE_DIR, f"{friendly_name}.json")
 
                 try:
@@ -384,101 +270,63 @@ class FortniteTrackerBot(discord.Client):
                 )
 
                 if total_parsed == 0:
-                    count_embed = Embed(
-                        title=f"Parsed Updates in {friendly_name}",
-                        color=discord.Color.yellow()
-                    )
+                    count_embed = Embed(title=f"Parsed Updates in {friendly_name}")
                     count_embed.add_field(name="Strings",     value="0", inline=True)
                     count_embed.add_field(name="DataTables",  value="0", inline=True)
                     count_embed.add_field(name="CurveTables", value="0", inline=True)
                     count_embed.add_field(name="Total Mods",  value="0", inline=False)
 
                     await self.send_embed_safe(channel, count_embed, file=diff_file)
-                    logging.info(f"No parsed mods; sent raw diff JSON with parsed‐style embed for {friendly_name}.")
+                    logging.info(f"No parsed mods; sent raw diff JSON for {friendly_name}.")
                     continue
 
                 embeds = []
 
+                # DataTable embeds
                 dt_changes = dt_plus + dt_minus
                 if dt_changes:
                     by_path = {}
                     for path, row, field, val, sign in dt_changes:
                         by_path.setdefault(path, []).append((row, field, val, sign))
                     for path, mods in by_path.items():
-                        total_mods = len(mods)
-                        num_parts = math.ceil(total_mods / 25)
-                        for part_index in range(num_parts):
-                            start = part_index * 25
-                            part_mods = mods[start : start + 25]
-                            title = "Summary"
-                            e = Embed(title=title, color=discord.Color.blue())
+                        num_parts = math.ceil(len(mods)/25)
+                        for pi in range(num_parts):
+                            chunk = mods[pi*25:(pi+1)*25]
+                            e = Embed(title="Summary")
                             e.description = f"➥ **DataTable Modification:** ```{path}```"
-                            for row, field, val, sign in part_mods:
+                            for row, field, val, sign in chunk:
                                 e.add_field(name=f"`{row} → {field}`", value=val, inline=False)
                             embeds.append(e)
 
+                # CurveTable embeds
                 ct_changes = ct_plus + ct_minus
                 if ct_changes:
                     by_path = {}
                     for path, row, field, val, sign in ct_changes:
                         by_path.setdefault(path, []).append((row, field, val, sign))
                     for path, mods in by_path.items():
-                        total_mods = len(mods)
-                        num_parts = math.ceil(total_mods / 25)
-                        for part_index in range(num_parts):
-                            start = part_index * 25
-                            part_mods = mods[start : start + 25]
-                            title = "Summary"
-                            e = Embed(title=title, color=discord.Color.blue())
+                        num_parts = math.ceil(len(mods)/25)
+                        for pi in range(num_parts):
+                            chunk = mods[pi*25:(pi+1)*25]
+                            e = Embed(title="Summary")
                             e.description = f"```{path}```"
-                            for row, field, val, sign in part_mods:
+                            for row, field, val, sign in chunk:
                                 e.add_field(name=f"`{row}.{field}`", value=val, inline=False)
                             embeds.append(e)
 
+                # Hotfix strings embeds
                 if hotfixes_plus:
-                    total_hotfixes = len(hotfixes_plus)
-                    num_parts = math.ceil(total_hotfixes / 25)
-                    for part_index in range(num_parts):
-                        start = part_index * 25
-                        part_hotfixes = hotfixes_plus[start : start + 25]
-                        title = "Summary"
-                        e = Embed(title=title, color=discord.Color.blue())
+                    num_parts = math.ceil(len(hotfixes_plus)/25)
+                    for pi in range(num_parts):
+                        chunk = hotfixes_plus[pi*25:(pi+1)*25]
+                        e = Embed(title="Summary")
                         e.description = "➥ **String modification detected**"
-                        for key, text in part_hotfixes:
+                        for key, text in chunk:
                             e.add_field(name=f"**{key}**", value=f"➥ {text}", inline=False)
                         embeds.append(e)
 
-                section = {
-                    "section_name": friendly_name,
-                    "modifications": []
-                }
-                for k, t in hotfixes_plus:
-                    section["modifications"].append({
-                        "type": "String", "key": k, "value": t
-                    })
-                for path, row, field, val, s in dt_plus + dt_minus:
-                    section["modifications"].append({
-                        "type": "DataTable", "path": path,
-                        "row_name": row, "field": field,
-                        "new_value": val,
-                        "change": "Added" if s == "+" else "Removed"
-                    })
-                for path, row, field, val, s in ct_plus + ct_minus:
-                    section["modifications"].append({
-                        "type": "CurveTable", "path": path,
-                        "row_name": row, "field": field,
-                        "new_value": val,
-                        "change": "Added" if s == "+" else "Removed"
-                    })
-
-                parsed_path = os.path.join(STATE_DIR, f"{friendly_name}_parsed.json")
-                with open(parsed_path, "w", encoding="utf-8") as f:
-                    json.dump([section], f, indent=4, ensure_ascii=False)
-
-                count_embed = Embed(
-                    title=f"Parsed Updates in {friendly_name}",
-                    color=discord.Color.yellow()
-                )
+                # Summary count embed
+                count_embed = Embed(title=f"Parsed Updates in {friendly_name}")
                 count_embed.add_field(name="Strings",     value=str(len(hotfixes_plus)), inline=True)
                 count_embed.add_field(name="DataTables",  value=str(len(dt_plus)),         inline=True)
                 count_embed.add_field(name="CurveTables", value=str(len(ct_plus)),         inline=True)
@@ -491,15 +339,25 @@ class FortniteTrackerBot(discord.Client):
                 )
                 count_embed.add_field(name="Total Mods", value=str(total_mods), inline=False)
 
+                parsed_path = os.path.join(STATE_DIR, f"{friendly_name}_parsed.json")
+                with open(parsed_path, "w", encoding="utf-8") as f:
+                    json.dump([{
+                        "section_name": friendly_name,
+                        "modifications": [
+                            *[{"type":"String","key":k,"value":t} for k,t in hotfixes_plus],
+                            *[{"type":"DataTable","path":p,"row_name":r,"field":f,"new_value":v,"change":("Added" if s=="+" else "Removed")} for p,r,f,v,s in dt_plus+dt_minus],
+                            *[{"type":"CurveTable","path":p,"row_name":r,"field":f,"new_value":v,"change":("Added" if s=="+" else "Removed")} for p,r,f,v,s in ct_plus+ct_minus],
+                        ]
+                    }], f, indent=4, ensure_ascii=False)
+
                 with open(parsed_path, "rb") as fp:
                     parsed_file = File(fp, filename=os.path.basename(parsed_path))
 
+                # Send in chunks of up to 10 embeds
                 all_embeds = embeds + [count_embed]
-                MAX_EMBEDS_PER_MESSAGE = 10
-
-                for i in range(0, len(all_embeds), MAX_EMBEDS_PER_MESSAGE):
-                    chunk = all_embeds[i : i + MAX_EMBEDS_PER_MESSAGE]
-                    if i + MAX_EMBEDS_PER_MESSAGE >= len(all_embeds):
+                for i in range(0, len(all_embeds), 10):
+                    chunk = all_embeds[i:i+10]
+                    if i+10 >= len(all_embeds):
                         await channel.send(embeds=chunk, file=parsed_file)
                     else:
                         await channel.send(embeds=chunk)

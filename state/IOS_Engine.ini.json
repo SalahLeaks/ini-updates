@@ -1,8 +1,0 @@
-[
-  "[ConsoleVariables]\n",
-  "Fort.Rollback.UseEnhancedInputForValetCars=1\n",
-  "Fort.Rollback.UseEnhancedInputForMotorcycles=1\n",
-  "MM.IslandOverrideOnFreshAccount=\"playlist_sunflowernobuildsolo\"\n",
-  "MM.IslandOverrides=(Island=\"playlist_sunflowernobuildsolo\", FreshAccountsOnly=true)\n",
-  "Fort.AutomaticClientReplayRecordingInShipping=0"
-]
